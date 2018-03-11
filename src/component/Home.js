@@ -15,6 +15,7 @@ class Home extends Component {
     error: null,
     isLoaded: false,
     playlist: defPlaylist,
+    autoPlay: false,
   };
 
   componentDidMount() {
@@ -50,11 +51,31 @@ class Home extends Component {
     }
   }
 
+  shufflePlaylist = (id) => {
+    const { playlist } = this.state;
+    const index = playlist.findIndex(pod => pod._id === id);
+    const newPlaylist = [...(playlist.slice(index)), ...(playlist.slice(0, index))];
+    this.setState({
+      playlist: newPlaylist,
+    });
+  };
+
+  handleAutoPlay = (value) => {
+    this.setState({
+      autoPlay: value,
+    });
+  };
+
   render() {
     return (
       <div className="Home">
         <div className="Home-Player">
-          <PlayerContainer playlist={this.state.playlist} />
+          <PlayerContainer
+            playlist={this.state.playlist}
+            auto={this.state.autoPlay}
+            onSelect={this.shufflePlaylist}
+            autoPlay={this.handleAutoPlay}
+          />
         </div>
         <div className="Home-Playing">Now playing</div>
         <div className="Home-Playlist">Playlist</div>
