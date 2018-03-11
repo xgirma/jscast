@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ReactAudioPlayer from 'react-audio-player';
 import '../style/Player.css';
 import { typePod } from '../utils/type';
-import { defPod } from '../utils/default.';
+import { defPod } from '../utils/default';
 
 class Player extends Component {
   static propTypes = {

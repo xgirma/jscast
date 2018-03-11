@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import FaArrowCircleRight from 'react-icons/lib/fa/arrow-circle-right';
 import FaArrowCircleLeft from 'react-icons/lib/fa/arrow-circle-left';
 import { typePlaylist } from '../utils/type';
-import { defPlaylist } from '../utils/default.';
+import { defPlaylist } from '../utils/default';
 import Player from './Player';
 import '../style/PlayerContainer.css';
 
@@ -27,20 +27,19 @@ class PlayerContainer extends Component {
   state = {};
 
   handlePrevious = () => {
-    const { playlist, onSelect, autoPlay } = this.props;
+    const { playlist, onSelect } = this.props;
     onSelect(playlist[9]._id);
-    autoPlay(true);
   };
 
   handleNext = () => {
-    const { playlist, onSelect, autoPlay } = this.props;
+    const { playlist, onSelect } = this.props;
     onSelect(playlist[1]._id);
-    autoPlay(true);
   };
 
   render() {
     const { playlist, auto } = this.props;
     const playing = playlist[0];
+    
     return (
       <div className="PlayerContainer">
         <div

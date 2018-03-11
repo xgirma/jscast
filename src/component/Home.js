@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PlayerContainer from './PlayerContainer';
+import Playlist from './Playlist';
 import { getRecent, getPopular } from '../api/api';
-import { defPlaylist } from '../utils/default.';
+import { defPlaylist } from '../utils/default';
 import '../style/Home.css';
 
 class Home extends Component {
@@ -57,6 +58,7 @@ class Home extends Component {
     const newPlaylist = [...(playlist.slice(index)), ...(playlist.slice(0, index))];
     this.setState({
       playlist: newPlaylist,
+      autoPlay: true,
     });
   };
 
@@ -74,11 +76,15 @@ class Home extends Component {
             playlist={this.state.playlist}
             auto={this.state.autoPlay}
             onSelect={this.shufflePlaylist}
-            autoPlay={this.handleAutoPlay}
           />
         </div>
         <div className="Home-Playing">Now playing</div>
-        <div className="Home-Playlist">Playlist</div>
+        <div className="Home-Playlist">
+          <Playlist
+            playlist={this.state.playlist}
+            onSelect={this.shufflePlaylist}
+          />
+        </div>
       </div>
     );
   }
