@@ -1,16 +1,14 @@
 import {applyMiddleware, compose, createStore} from 'redux';
 
-import reducers from '../reducers/';
-import initialState from './initialState';
+import reducers from '../reducers/playlist';
+import initialState from './initial'; // initial state
 
 const middleware = [];
 const enhancers = [];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(
+export default createStore(
   reducers,
   initialState,
   composeEnhancers(applyMiddleware(...middleware), ...enhancers),
 );
-
-export default store;
