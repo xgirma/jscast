@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PlayerContainer from './PlayerContainer';
 import Playlist from './Playlist';
+import Playing from './Playing';
 import { getRecent, getPopular } from '../api/api';
 import { defPlaylist } from '../utils/default';
 import '../style/Home.css';
@@ -69,6 +70,8 @@ class Home extends Component {
   };
 
   render() {
+    const playing = this.state.playlist[0];
+    
     return (
       <div className="Home">
         <div className="Home-Player">
@@ -78,13 +81,15 @@ class Home extends Component {
             onSelect={this.shufflePlaylist}
           />
         </div>
-        <div className="Home-Playing">Now playing</div>
+        
         <div className="Home-Playlist">
           <Playlist
             playlist={this.state.playlist}
             onSelect={this.shufflePlaylist}
           />
         </div>
+  
+        <div className="Home-Playing"><Playing playing={playing}/></div>
       </div>
     );
   }
