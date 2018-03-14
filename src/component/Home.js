@@ -1,11 +1,12 @@
-// Player container
 import React from 'react';
-import PlayerContainer from '../containers/Player';
+import Player from '../containers/Player';
+import Playlist from '../containers/Playlist';
 import '../style/Home.css';
 
 const Home = () => (
   <div className="Home">
-    <PlayerContainer />
+    <Player />
+    <Playlist />
   </div>
 );
 
