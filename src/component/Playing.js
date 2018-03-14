@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import h2p from 'html2plaintext';
-import '../style/Playing.css';
 import {typePod} from "../utils/type";
 import {defPod} from "../utils/default";
+import '../style/Playing.css';
 
 class Playing extends Component {
   static propTypes = {
@@ -15,13 +15,13 @@ class Playing extends Component {
   
   displayName = 'Playing';
   
-  state = {};
-  
   render() {
-    const {episodeTitle, title, link, author, copyright, episodeDescription, published, likes} = this.props.playing;
+    const {playlist} = this.props;
+    const {episodeTitle, title, link, author, copyright,
+      episodeDescription, published, likes} = playlist[0];
     
     return (
-      <div className="container-Playing">
+      <div className="Playing">
         <p>{episodeTitle}</p>
         <p>{title}</p>
         <p>{link}</p>
