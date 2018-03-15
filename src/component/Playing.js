@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import h2p from 'html2plaintext';
 import MdThumbUp from 'react-icons/lib/md/thumb-up';
 import PropTypes from 'prop-types';
-import { typePod } from '../utils/type';
+import { typePlaylist } from '../utils/type';
 import { defPod } from '../utils/default';
 import { getPods } from '../actions/playlist';
 import { TEN_RECENT, TEN_POPULAR } from '../utils/path';
@@ -10,13 +10,15 @@ import '../style/Playing.css';
 
 class Playing extends Component {
   static propTypes = {
-    playlist: typePod,
+    playlist: typePlaylist,
     recent: PropTypes.bool,
-    likePod: PropTypes.bool,
+    likePod: PropTypes.func,
   };
 
   static defaultProps = {
     playlist: defPod,
+    recent: true,
+    likePod: () => {},
   };
 
   displayName = 'Playing';
