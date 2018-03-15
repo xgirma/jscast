@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import h2p from 'html2plaintext';
+import MdThumbUp from 'react-icons/lib/md/thumb-up';
+import PropTypes from 'prop-types';
 import { typePod } from '../utils/type';
 import { defPod } from '../utils/default';
+import { getPods } from '../actions/playlist';
+import { TEN_RECENT, TEN_POPULAR } from '../utils/path';
 import '../style/Playing.css';
 
 class Playing extends Component {
   static propTypes = {
     playlist: typePod,
+    recent: PropTypes.bool,
+    likePod: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -14,6 +20,28 @@ class Playing extends Component {
   };
 
   displayName = 'Playing';
+
+  state = {
+    liked: false,
+  };
+
+  componentDidMount() {
+    const { recent } = this.props;
+    if (recent) {
+      getPods(TEN_RECENT);
+    } else {
+      getPods(TEN_POPULAR);
+    }
+  }
+
+  handleLike = () => {
+    const { likePod, playlist } = this.props;
+    const id = playlist[0]._id;
+    likePod(id);
+    this.setState({
+      liked: true,
+    });
+  };
 
   render() {
     const { playlist } = this.props;
@@ -24,14 +52,23 @@ class Playing extends Component {
 
     return (
       <div className="Playing">
-        <p>{episodeTitle}</p>
-        <p>{title}</p>
-        <p>{link}</p>
-        <p>{author}</p>
-        <p>{copyright}</p>
-        <p>{h2p(episodeDescription)}</p>
-        <p>{published}</p>
-        <p>{likes}</p>
+        <div
+          className="container-Like"
+          role="link"
+          onClick={this.handleLike}
+        >
+          <MdThumbUp />
+        </div>
+        <div>
+          <p>{episodeTitle}</p>
+          <p>{title}</p>
+          <p>{link}</p>
+          <p>{author}</p>
+          <p>{copyright}</p>
+          <p>{h2p(episodeDescription)}</p>
+          <p>{published}</p>
+          <p>{this.state.liked ? (likes + 1) : likes}</p>
+        </div>
       </div>
     );
   }

@@ -44,4 +44,7 @@ const playlist = [{
 export default {
   autoPlay: false,
   playlist,
+  recent: true,
+  liked: false,
+  error: null,
 };

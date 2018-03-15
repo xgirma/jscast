@@ -1,4 +1,7 @@
-import { NEXT_POD, PREVIOUS_POD, SELECT_POD, FETCH_PODS_SUCCESS, FETCH_PODS_FAILURE } from '../actions/constants';
+import {
+  NEXT_POD, PREVIOUS_POD, SELECT_POD, FETCH_PODS_SUCCESS,
+  FETCH_PODS_FAILURE, POST_LIKE_PODS_FAILURE, POST_LIKE_PODS_SUCCESS,
+} from '../actions/constants';
 
 export default function (state = {}, action) {
   if (action.type === NEXT_POD) {
@@ -47,7 +50,24 @@ export default function (state = {}, action) {
   }
 
   if (action.type === FETCH_PODS_FAILURE) {
-    return state;
+    return {
+      ...state,
+      error: action.error,
+    };
+  }
+
+  if (action.type === POST_LIKE_PODS_SUCCESS) {
+    return {
+      ...state,
+      liked: action.liked,
+    };
+  }
+
+  if (action.type === POST_LIKE_PODS_FAILURE) {
+    return {
+      ...state,
+      error: action.error,
+    };
   }
 
   return state;

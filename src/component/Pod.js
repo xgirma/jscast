@@ -7,7 +7,7 @@ import '../style/Pod.css';
 class Pod extends Component {
   static propTypes = {
     pod: typePod,
-    onPodClick: PropTypes.func.isRequired,
+    onPodClick: PropTypes,
   };
 
   static defaultProps = {
