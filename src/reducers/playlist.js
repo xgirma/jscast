@@ -8,12 +8,13 @@ export default function (state = {}, action) {
     const { playlist } = state;
 
     if (playlist.length <= 1) {
-      return { autoPlay: true, ...playlist };
+      return { ...state, autoPlay: true };
     }
 
     const index = 1;
 
     return {
+      ...state,
       autoPlay: true,
       playlist: [...(playlist.slice(index)), ...(playlist.slice(0, index))],
     };
@@ -21,12 +22,15 @@ export default function (state = {}, action) {
 
   if (action.type === PREVIOUS_POD) {
     const { playlist } = state;
+    
     if (playlist.length <= 1) {
-      return { autoPlay: true, ...playlist };
+      return { ...state, autoPlay: true, ...playlist };
     }
+    
     const index = playlist.length - 1;
 
     return {
+      ...state,
       autoPlay: true,
       playlist: [...(playlist.slice(index)), ...(playlist.slice(0, index))],
     };
@@ -37,6 +41,7 @@ export default function (state = {}, action) {
     const index = playlist.findIndex(pod => pod._id === action.id);
 
     return {
+      ...state,
       autoPlay: true,
       playlist: [...(playlist.slice(index)), ...(playlist.slice(0, index))],
     };
@@ -44,6 +49,7 @@ export default function (state = {}, action) {
 
   if (action.type === FETCH_PODS_SUCCESS) {
     return {
+      ...state,
       autoPlay: false,
       playlist: action.playlist,
     };
@@ -59,7 +65,6 @@ export default function (state = {}, action) {
   if (action.type === POST_LIKE_PODS_SUCCESS) {
     return {
       ...state,
-      liked: action.liked,
     };
   }
 
