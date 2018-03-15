@@ -1,25 +1,27 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import h2p from 'html2plaintext';
-import {typePod} from "../utils/type";
-import {defPod} from "../utils/default";
+import { typePod } from '../utils/type';
+import { defPod } from '../utils/default';
 import '../style/Playing.css';
 
 class Playing extends Component {
   static propTypes = {
-    playing: typePod,
+    playlist: typePod,
   };
-  
+
   static defaultProps = {
-    playing: defPod,
+    playlist: defPod,
   };
-  
+
   displayName = 'Playing';
-  
+
   render() {
-    const {playlist} = this.props;
-    const {episodeTitle, title, link, author, copyright,
-      episodeDescription, published, likes} = playlist[0];
-    
+    const { playlist } = this.props;
+    const {
+      episodeTitle, title, link, author, copyright,
+      episodeDescription, published, likes,
+    } = playlist[0];
+
     return (
       <div className="Playing">
         <p>{episodeTitle}</p>
@@ -31,7 +33,7 @@ class Playing extends Component {
         <p>{published}</p>
         <p>{likes}</p>
       </div>
-    )
+    );
   }
 }
 

@@ -15,4 +15,4 @@ const defPod = {
 
 const defPlaylist = [defPod];
 
-export {defPlaylist, defPod};
+export { defPlaylist, defPod };
