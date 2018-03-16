@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import About from './About';
 import Channel from './Channel';
+import Header from './Header';
 import Home from './Home';
 import Library from './Library';
 import NotFound from './NotFound';
@@ -12,7 +13,7 @@ class Application extends Component {
     return (
       <div className="app">
         <div className="app-header">
-          {'Home | Library | About'}
+          <Header />
         </div>
         <div className="app-body">
           <HashRouter>
