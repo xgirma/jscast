@@ -34,11 +34,13 @@ export const likePod = id => (dispatch) => {
   });
 };
 
-export const getPods = path => (dispatch) => {
+export const getPods = (path, recent, library) => (dispatch) => {
   api.getPods(path).then((playlist) => {
     dispatch({
       type: FETCH_PODS_SUCCESS,
       playlist: playlist.data,
+      recent,
+      library,
     });
   }).catch((error) => {
     dispatch({

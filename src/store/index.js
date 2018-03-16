@@ -1,6 +1,5 @@
 import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
-
 import reducers from '../reducers/playlist';
 import initialState from './initial'; // initial state
 import { getPods } from '../actions/playlist';
@@ -16,6 +15,6 @@ const store = createStore(
   composeEnhancers(applyMiddleware(...middleware), ...enhancers),
 );
 
-store.dispatch(getPods(TEN_RECENT));
+store.dispatch(getPods(TEN_RECENT, true, false));
 
 export default store;

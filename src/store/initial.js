@@ -23,7 +23,7 @@ const playlist = [{
   published: '2013-01-16T00:15:00.000Z',
   url: 'http://fdlyr.co/d/webahead/cdn.5by5.tv/audio/broadcasts/webahead/2013/webahead-047.mp3',
   mediaType: '0',
-  likes: 0,
+  likes: 2,
 }, {
   _id: '5aa24a14a2b049090fca1b3f',
   title: 'All JavaScript Podcasts by Devchat.tv',
@@ -37,7 +37,7 @@ const playlist = [{
   published: '2017-01-19T11:00:00.000Z',
   url: 'https://media.devchat.tv/my-js-story/JSJ_001.mp3',
   mediaType: '0',
-  likes: 0,
+  likes: 10,
   __v: 0,
 }];
 
@@ -45,5 +45,6 @@ export default {
   autoPlay: false,
   playlist,
   recent: true,
+  library: false,
   error: null,
 };

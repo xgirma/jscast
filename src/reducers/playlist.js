@@ -22,11 +22,11 @@ export default function (state = {}, action) {
 
   if (action.type === PREVIOUS_POD) {
     const { playlist } = state;
-    
+
     if (playlist.length <= 1) {
       return { ...state, autoPlay: true, ...playlist };
     }
-    
+
     const index = playlist.length - 1;
 
     return {
@@ -52,6 +52,8 @@ export default function (state = {}, action) {
       ...state,
       autoPlay: false,
       playlist: action.playlist,
+      recent: action.recent,
+      library: action.library,
     };
   }
 
