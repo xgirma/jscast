@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import About from './About';
-import Channel from './Channel';
+import Channel from './Collection';
 import Header from './Header';
 import Home from './Home';
 import Library from './Library';

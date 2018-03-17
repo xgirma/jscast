@@ -1,11 +1,11 @@
 import React from 'react';
-import Channels from '../containers/Channels';
+import Collections from '../containers/Collections';
 import '../style/Home.css';
 
-const Home = () => (
-  <div className="Home">
-    <Channels />
+const Library = () => (
+  <div className="Library">
+    <Collections />
   </div>
 );
 
-export default Home;
+export default Library;

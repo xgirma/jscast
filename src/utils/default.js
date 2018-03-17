@@ -13,7 +13,7 @@ const defPod = {
   likes: 0,
 };
 
-const defChannel = {
+const defCollection = {
   _id: '5a9fc2c90ec991131db6b49a',
   title: 'My JavaScript Story',
   link: 'http://devchat.tv/my-js-story',
@@ -24,6 +24,6 @@ const defChannel = {
 };
 
 const defPlaylist = [defPod];
-const defChannels = [defChannel];
+const defCollections = [defCollection];
 
-export { defPlaylist, defPod, defChannel, defChannels };
+export { defPlaylist, defPod, defCollection, defCollections };

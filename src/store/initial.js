@@ -40,7 +40,7 @@ const playlist = [{
   likes: 10,
 }];
 
-const channels = [
+const collections = [
   {
     _id: '5a9fc2b50ec991131db6b499',
     title: 'HashBang',
@@ -73,7 +73,7 @@ const channels = [
 export default {
   autoPlay: false,
   playlist,
-  channels,
+  collections,
   recent: true,
   library: false,
   error: null,

@@ -16,7 +16,7 @@ const typePod = shape({
   likes: number,
 });
 
-const typeChannel = shape({
+const typeCollection = shape({
   _id: string,
   title: string,
   link: string,
@@ -27,6 +27,6 @@ const typeChannel = shape({
 });
 
 const typePlaylist = PropTypes.arrayOf(typePod);
-const typeChannels = PropTypes.arrayOf(typeChannel);
+const typeCollections = PropTypes.arrayOf(typeCollection);
 
-export { typePod, typePlaylist, typeChannels, typeChannel };
+export { typePod, typePlaylist, typeCollections, typeCollection };
