@@ -20,7 +20,7 @@ class Application extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/library" component={Library} />
-              <Route exact path="/library/:channel" render={props => <Channel {...props} />} />
+              <Route exact path="/library/channel/:channel" render={props => <Channel {...props} />} />
               <Route exact path="/about" component={About} />
               <Route component={NotFound} />
             </Switch>
