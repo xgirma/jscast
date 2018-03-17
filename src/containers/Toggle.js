@@ -1,14 +1,14 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Toggle from '../component/Toggle';
-import { getPods } from '../actions/playlist';
+import { getPods, getPodsByChannel } from '../actions/playlist';
 
-const mapStateToProps = ({ recent, library }) => ({
-  recent, library,
+const mapStateToProps = ({ recent, library, channel }) => ({
+  recent, library, channel
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getPods,
+  getPods, getPodsByChannel
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Toggle);

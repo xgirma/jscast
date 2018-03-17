@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import About from './About';
-import Channel from './Collection';
+import ChannelContainer from '../containers/Channel';
 import Header from './Header';
-import Home from './Home';
+import HomeContainer from '../containers/Home';
 import Library from './Library';
 import NotFound from './NotFound';
 import '../style/Application.css';
@@ -18,9 +18,9 @@ class Application extends Component {
         <div className="app-body">
           <HashRouter>
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" component={HomeContainer} />
               <Route exact path="/library" component={Library} />
-              <Route exact path="/library/channel/:channel" render={props => <Channel {...props} />} />
+              <Route exact path="/library/channel/:channel" render={props => <ChannelContainer {...props} />} />
               <Route exact path="/about" component={About} />
               <Route component={NotFound} />
             </Switch>

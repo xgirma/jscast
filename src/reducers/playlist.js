@@ -1,7 +1,7 @@
 import {
   NEXT_POD, PREVIOUS_POD, SELECT_POD, FETCH_PODS_SUCCESS,
   FETCH_PODS_FAILURE, POST_LIKE_PODS_FAILURE, POST_LIKE_PODS_SUCCESS,
-  FETCH_COLLECTION_SUCCESS, FETCH_COLLECTION_FAILURE
+  FETCH_COLLECTION_SUCCESS, FETCH_COLLECTION_FAILURE, FETCH_CHANNEL_POD_SUCCESS, FETCH_CHANNEL_POD_FAILURE,
 } from '../actions/constants';
 
 export default function (state = {}, action) {
@@ -77,7 +77,7 @@ export default function (state = {}, action) {
       error: action.error,
     };
   }
-  
+
   if (action.type === FETCH_COLLECTION_SUCCESS) {
     return {
       ...state,
@@ -85,14 +85,31 @@ export default function (state = {}, action) {
       collections: action.collections,
     };
   }
-  
+
   if (action.type === FETCH_COLLECTION_FAILURE) {
     return {
       ...state,
       error: action.error,
     };
   }
-  
-  
+
+  if (action.type === FETCH_CHANNEL_POD_SUCCESS) {
+    return {
+      ...state,
+      autoPlay: false,
+      playlist: action.playlist,
+      recent: action.recent,
+      library: action.library,
+      channel: action.channel,
+    };
+  }
+
+  if (action.type === FETCH_CHANNEL_POD_FAILURE) {
+    return {
+      ...state,
+      error: action.error,
+    };
+  }
+
   return state;
 }

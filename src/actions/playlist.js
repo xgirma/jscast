@@ -3,7 +3,7 @@ import {
   FETCH_PODS_SUCCESS, FETCH_PODS_FAILURE,
   POST_LIKE_PODS_FAILURE, POST_LIKE_PODS_SUCCESS,
   FETCH_COLLECTION_SUCCESS, FETCH_COLLECTION_FAILURE,
-  FETCH_CHANNELS_POD_SUCCESS, FETCH_CHANNELS_POD_FAILURE,
+  FETCH_CHANNEL_POD_SUCCESS, FETCH_CHANNEL_POD_FAILURE,
 } from './constants';
 import api from '../utils/api';
 
@@ -36,13 +36,14 @@ export const likePod = id => (dispatch) => {
   });
 };
 
-export const getPods = (path, recent=true, library=false) => (dispatch) => {
+export const getPods = (path, recent = true, library = false) => (dispatch) => {
   api.getPods(path).then((playlist) => {
     dispatch({
       type: FETCH_PODS_SUCCESS,
       playlist: playlist.data,
       recent,
       library,
+      channel: null,
     });
   }).catch((error) => {
     dispatch({
@@ -57,6 +58,7 @@ export const getChannels = () => (dispatch) => {
     dispatch({
       type: FETCH_COLLECTION_SUCCESS,
       collections: collections.data,
+      channel: null,
     });
   }).catch((error) => {
     dispatch({
@@ -66,17 +68,18 @@ export const getChannels = () => (dispatch) => {
   });
 };
 
-export const getPodsFromChannel = (path, channel, recent=true, library=true) => (dispatch) => {
-  api.getPods(path, channel).then((playlist) => {
+export const getPodsByChannel = (path, channel, recent = true, library = true) => (dispatch) => {
+  api.getPodsFromChannel(path, channel).then((playlist) => {
     dispatch({
-      type: FETCH_CHANNELS_POD_SUCCESS,
+      type: FETCH_CHANNEL_POD_SUCCESS,
       playlist: playlist.data,
       recent,
       library,
+      channel,
     });
   }).catch((error) => {
     dispatch({
-      type: FETCH_CHANNELS_POD_FAILURE,
+      type: FETCH_CHANNEL_POD_FAILURE,
       error,
     });
   });

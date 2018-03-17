@@ -74,6 +74,7 @@ export default {
   autoPlay: false,
   playlist,
   collections,
+  channel: null,
   recent: true,
   library: false,
   error: null,

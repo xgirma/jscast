@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import '../style/Toggle.css';
-import { TEN_RECENT, TEN_POPULAR } from '../utils/path';
+import { TEN_RECENT, TEN_POPULAR,
+  TEN_RECENT_BY_CHANNEL, TEN_POPULAR_BY_CHANNEL } from '../utils/path';
+import { getPods, getPodsByChannel } from '../actions/playlist';
 import store from '../store';
-import { getPods } from '../actions/playlist';
 
 class Toggle extends Component {
   static propTypes = {
@@ -29,16 +30,15 @@ class Toggle extends Component {
   handleHomePopular = () => {
     store.dispatch(getPods(TEN_POPULAR, false, false));
   };
-
-  // TODO get library name for below
-  handleLibraryRecent = (channel) => {
-    const url = `some const${channel}`;
-    store.dispatch(getPods(url, true, true));
+  
+  handleChannelRecent = () => {
+    const { channel} = this.props;
+    store.dispatch(getPodsByChannel(TEN_RECENT, channel, true, true));
   };
-
-  handleLibraryPopular = (channel) => {
-    const url = `some const${channel}`;
-    store.dispatch(getPods(url, false, true));
+  
+  handleChannelPopular = () => {
+    const { channel} = this.props;
+    store.dispatch(getPodsByChannel(TEN_POPULAR, channel, false, true));
   };
 
   render() {
@@ -48,8 +48,8 @@ class Toggle extends Component {
       <div className="container-Toggle">
         {library
           ? (recent
-            ? <div>Popular Channel ...</div>
-            : <div>Recent Channel ...</div>
+            ? <div role="link" onClick={this.handleChannelPopular}>Get Popular</div>
+            : <div role="link" onClick={this.handleChannelRecent}>Get Recent</div>
           )
           : (recent
             ? <div role="link" onClick={this.handleHomePopular}>Get Popular</div>
