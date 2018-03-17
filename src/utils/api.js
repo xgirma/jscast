@@ -2,9 +2,18 @@ import { LIKE_POD } from './path';
 
 const BASE_URL = 'https://midiapi.herokuapp.com/api/v1';
 
-const getPodcasts = async (path) => {
+const pods = async (path) => {
   try {
     const response = await fetch(`${BASE_URL}${path}`);
+    return response.json();
+  } catch (err) {
+    throw Error(err);
+  }
+};
+
+const channels = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/channels`);
     return response.json();
   } catch (err) {
     throw Error(err);
@@ -28,7 +37,10 @@ const submitLike = async (id) => {
 
 export default {
   getPods(path) {
-    return getPodcasts(path);
+    return pods(path);
+  },
+  getChannels() {
+    return channels();
   },
   likePod(id) {
     return submitLike(id);

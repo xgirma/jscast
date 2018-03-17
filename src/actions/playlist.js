@@ -49,3 +49,7 @@ export const getPods = (path, recent, library) => (dispatch) => {
     });
   });
 };
+
+export const getChannels = () => (dispatch) => {
+
+};

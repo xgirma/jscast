@@ -1,23 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import '../style/Library.css';
+import React from 'react';
+import Channels from '../containers/Channels';
+import '../style/Home.css';
 
-class Library extends Component {
-  static propTypes = {};
+const Home = () => (
+  <div className="Home">
+    <Channels />
+  </div>
+);
 
-  static defaultProps = {};
-
-  displayName = 'Library';
-
-  state = {};
-
-  render() {
-    return (
-      <div className="Library">
-        {'library'}
-      </div>
-    );
-  }
-}
-
-export default Library;
+export default Home;

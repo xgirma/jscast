@@ -13,6 +13,17 @@ const defPod = {
   likes: 0,
 };
 
-const defPlaylist = [defPod];
+const defChannel = {
+  _id: '5a9fc2c90ec991131db6b49a',
+  title: 'My JavaScript Story',
+  link: 'http://devchat.tv/my-js-story',
+  description: 'A weekly exploration into the people who make JavaScript what it is.',
+  image: 'https://s3.amazonaws.com/devchat.tv/MyJSStory.jpg',
+  author: 'Devchat.tv',
+  copyright: '2017 Intentional Excellence Productions, LLC',
+};
 
-export { defPlaylist, defPod };
+const defPlaylist = [defPod];
+const defChannels = [defChannel];
+
+export { defPlaylist, defPod, defChannel, defChannels };

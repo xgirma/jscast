@@ -38,12 +38,42 @@ const playlist = [{
   url: 'https://media.devchat.tv/my-js-story/JSJ_001.mp3',
   mediaType: '0',
   likes: 10,
-  __v: 0,
 }];
+
+const channels = [
+  {
+    _id: '5a9fc2b50ec991131db6b499',
+    title: 'HashBang',
+    link: 'http://hashbangshow.okgrow.com/',
+    description: 'HashBang features interviews and discussion about the latest in JavaScript and the JavaScript ecosystem. It is brought to you by OK GROW!, a JavaScript consulting and training company. \r\n\r\nAlso available with video on YouTube: https://goo.gl/PrjtfR',
+    image: 'https://media.simplecast.com/podcast/image/2601/1485531097-artwork.jpg',
+    author: 'OK GROW!',
+    copyright: '© 2017 OK GROW!',
+  },
+  {
+    _id: '5a9fc2c90ec991131db6b49a',
+    title: 'My JavaScript Story',
+    link: 'http://devchat.tv/my-js-story',
+    description: 'A weekly exploration into the people who make JavaScript what it is.',
+    image: 'https://s3.amazonaws.com/devchat.tv/MyJSStory.jpg',
+    author: 'Devchat.tv',
+    copyright: '2017 Intentional Excellence Productions, LLC',
+  },
+  {
+    _id: '5a9fc357e4820f134349939a',
+    title: 'Tales From The Script',
+    link: 'http://www.tftscript.com/',
+    description: 'A podcast focused on front end web development, accessibility, performance and user experience mixed with a little bit of horror. ',
+    image: 'https://media.simplecast.com/podcast/image/3216/1519677505-artwork.jpg',
+    author: 'Chris DeMars',
+    copyright: '2017-2018 Tales From The Script',
+  },
+];
 
 export default {
   autoPlay: false,
   playlist,
+  channels,
   recent: true,
   library: false,
   error: null,

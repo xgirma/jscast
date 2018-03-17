@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { typeChannel } from '../utils/type';
+import { defChannel } from '../utils/default';
 import '../style/Channel.css';
 
 class Channel extends Component {
-  static propTypes = {};
+  static propTypes = {
+    channel: typeChannel,
+  };
 
-  static defaultProps = {};
+  static defaultProps = {
+    channel: defChannel,
+  };
 
   displayName = 'Channel';
 
   state = {};
 
   render() {
+    const { channel } = this.props;
     return (
       <div className="Channel">
-        {'channel'}
+        {channel.title}
       </div>
     );
   }

@@ -1,35 +1,35 @@
 import React from 'react';
-import {HashRouter, NavLink} from "react-router-dom";
+import { HashRouter, NavLink } from 'react-router-dom';
 import '../style/Header.css';
 
 const Header = () => (
   <HashRouter>
     <ul className="container-header">
-      
+
       <li className="item-home">
         <NavLink
           to="/"
-          exact={true}
+          exact
         >Home
         </NavLink>
       </li>
-      
+
       <li className="item-library">
         <NavLink
           to="/library"
-          exact={true}
+          exact
         >Library
         </NavLink>
       </li>
-      
+
       <li className="item-about">
         <NavLink
           to="/about"
-          exact={true}
+          exact
         >About
         </NavLink>
       </li>
-    
+
     </ul>
   </HashRouter>
 );
