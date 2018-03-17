@@ -2,6 +2,7 @@ import {
   SELECT_POD, NEXT_POD, PREVIOUS_POD,
   FETCH_PODS_SUCCESS, FETCH_PODS_FAILURE,
   POST_LIKE_PODS_FAILURE, POST_LIKE_PODS_SUCCESS,
+  FETCH_CHANNELS_SUCCESS, FETCH_CHANNELS_FAILURE
 } from './constants';
 import api from '../utils/api';
 
@@ -51,5 +52,15 @@ export const getPods = (path, recent, library) => (dispatch) => {
 };
 
 export const getChannels = () => (dispatch) => {
-
+  api.getChannelsInfo().then((channels) => {
+    dispatch({
+      type: FETCH_CHANNELS_SUCCESS,
+      channels: channels.data,
+    });
+  }).catch((error) => {
+    dispatch({
+      type: FETCH_CHANNELS_FAILURE,
+      error,
+    });
+  });
 };

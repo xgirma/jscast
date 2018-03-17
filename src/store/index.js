@@ -18,4 +18,6 @@ const store = createStore(
 store.dispatch(getPods(TEN_RECENT, true, false));
 store.dispatch(getChannels());
 
+console.log(store.getState());
+
 export default store;

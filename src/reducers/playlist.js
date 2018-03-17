@@ -1,6 +1,7 @@
 import {
   NEXT_POD, PREVIOUS_POD, SELECT_POD, FETCH_PODS_SUCCESS,
   FETCH_PODS_FAILURE, POST_LIKE_PODS_FAILURE, POST_LIKE_PODS_SUCCESS,
+  FETCH_CHANNELS_SUCCESS, FETCH_CHANNELS_FAILURE
 } from '../actions/constants';
 
 export default function (state = {}, action) {
@@ -76,6 +77,22 @@ export default function (state = {}, action) {
       error: action.error,
     };
   }
-
+  
+  if (action.type === FETCH_CHANNELS_SUCCESS) {
+    return {
+      ...state,
+      autoPlay: false,
+      channels: action.channels,
+    };
+  }
+  
+  if (action.type === FETCH_CHANNELS_FAILURE) {
+    return {
+      ...state,
+      error: action.error,
+    };
+  }
+  
+  
   return state;
 }

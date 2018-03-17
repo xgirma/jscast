@@ -20,6 +20,15 @@ const channels = async () => {
   }
 };
 
+const podsFromChannel = async (channel, recent) => {
+  try {
+    const response = await fetch(`${BASE_URL}/channels`);
+    return response.json();
+  } catch (err) {
+    throw Error(err);
+  }
+};
+
 const submitLike = async (id) => {
   try {
     const response = await fetch(`${BASE_URL}${LIKE_POD}${id}`, {
@@ -39,8 +48,11 @@ export default {
   getPods(path) {
     return pods(path);
   },
-  getChannels() {
+  getChannelsInfo() {
     return channels();
+  },
+  getPodsFromChannel(){
+    return podsFromChannel();
   },
   likePod(id) {
     return submitLike(id);

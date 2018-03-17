@@ -24,8 +24,8 @@ class Channel extends Component {
   handleClick = () => {
     this.setState((prevState) => {
       return {expand: !prevState.expand}
-    })
-;  };
+    });
+  };
 
   render() {
     const { channel } = this.props;
@@ -34,8 +34,8 @@ class Channel extends Component {
     const detail = (<div>
       <p>{author? author: null}</p>
       <p>{description? description: null}</p>
-      <p>{copyright? copyright: null}</p>
       <p>{link? link: null}</p>
+      <p>{copyright? copyright: null}</p>
     </div>);
     
     return (
