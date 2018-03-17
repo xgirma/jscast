@@ -26,7 +26,7 @@ class Pod extends Component {
     const { pod } = this.props;
     return (
       <div className="container-Pod" role="link" onClick={this.handlePodClick}>
-        <b>{pod.published}</b>: {pod.title}
+        <b>{pod.published}</b>: {pod.episodeTitle}
       </div>
     );
   }
