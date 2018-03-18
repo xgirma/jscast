@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import store from '../store';
 import Channel from '../component/Channel'
 import { TEN_RECENT } from '../utils/path';
-import { getPodsByChannel } from '../actions/playlist';
+import { getPodsByChannel } from '../actions';
 import '../style/Channel.css';
 
 class ChannelContainer extends Component {

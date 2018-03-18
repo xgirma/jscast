@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Playing from '../component/Playing';
-import { likePod } from '../actions/playlist';
+import { likePod } from '../actions';
 
 const mapStateToProps = ({ playlist }) => ({
   playlist,

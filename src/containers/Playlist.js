@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Playlist from '../component/Playlist';
-import { selectPod } from '../actions/playlist';
+import { selectPod } from '../actions';
 
 const mapStateToProps = ({ playlist, autoPlay }) => ({
   playlist,

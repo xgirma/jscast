@@ -4,7 +4,7 @@ import MdThumbUp from 'react-icons/lib/md/thumb-up';
 import PropTypes from 'prop-types';
 import { typePlaylist } from '../utils/type';
 import { defPod } from '../utils/default';
-import { getPods } from '../actions/playlist';
+import { getPods } from '../actions';
 import { TEN_RECENT, TEN_POPULAR } from '../utils/path';
 import '../style/Playing.css';
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../style/Toggle.css';
 import { TEN_RECENT, TEN_POPULAR,
   TEN_RECENT_BY_CHANNEL, TEN_POPULAR_BY_CHANNEL } from '../utils/path';
-import { getPods, getPodsByChannel } from '../actions/playlist';
+import { getPods, getPodsByChannel } from '../actions';
 import store from '../store';
 
 class Toggle extends Component {

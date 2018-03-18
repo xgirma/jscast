@@ -2,7 +2,7 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from '../reducers/playlist';
 import initialState from './initial'; // initial state
-import { getPods, getChannels } from '../actions/playlist';
+import { getPods, getChannels } from '../actions';
 import { TEN_RECENT } from '../utils/path';
 
 const middleware = [thunk];
