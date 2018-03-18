@@ -1,36 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Pod from './Pod';
 import { typePlaylist } from '../utils/type';
 import { defPlaylist } from '../utils/default';
 import '../style/Playlist.css';
 
-class Playlist extends Component {
-  static propTypes = {
-    playlist: typePlaylist,
-    onPodClick: PropTypes.func,
-  };
+const Playlist = ({ playlist, onPodClick }) => (
+  <div className="Playlist">
+    {
+      playlist.map(pod => (
+        <Pod key={pod._id} pod={pod} onPodClick={onPodClick} />
+      ))
+    }
+  </div>
+);
 
-  static defaultProps = {
-    playlist: defPlaylist,
-    onPodClick: () => {},
-  };
+Playlist.propTypes = {
+  playlist: typePlaylist,
+  onPodClick: PropTypes.func,
+};
 
-  displayName = 'Playlist';
+Playlist.defaultProps = {
+  playlist: defPlaylist,
+  onPodClick: () => {},
+};
 
-  render() {
-    const { playlist, onPodClick } = this.props;
-
-    return (
-      <div className="Playlist">
-        {
-          playlist.map(pod => (
-            <Pod key={pod._id} pod={pod} onPodClick={onPodClick} />
-          ))
-        }
-      </div>
-    );
-  }
-}
+Playlist.displayName = 'Playlist';
 
 export default Playlist;

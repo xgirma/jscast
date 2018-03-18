@@ -29,32 +29,36 @@ class Toggle extends Component {
   handleHomePopular = () => {
     store.dispatch(getPods(TEN_POPULAR, false, false));
   };
-  
+
   handleChannelRecent = () => {
-    const { channel} = this.props;
+    const { channel } = this.props;
     store.dispatch(getPodsByChannel(TEN_RECENT, channel, true, true));
   };
-  
+
   handleChannelPopular = () => {
-    const { channel} = this.props;
+    const { channel } = this.props;
     store.dispatch(getPodsByChannel(TEN_POPULAR, channel, false, true));
   };
 
   render() {
     const { recent, library } = this.props;
 
+    const Switcher = () => {
+      if (library) {
+        if (recent) {
+          return <div role="link" onClick={this.handleChannelPopular}>Get Popular</div>;
+        }
+        return <div role="link" onClick={this.handleChannelRecent}>Get Recent</div>;
+      }
+      if (recent) {
+        return <div role="link" onClick={this.handleHomePopular}>Get Popular</div>;
+      }
+      return <div role="link" onClick={this.handleHomeRecent}>Get Recent</div>;
+    };
+
     return (
       <div className="Toggle">
-        {library
-          ? (recent
-            ? <div role="link" onClick={this.handleChannelPopular}>Get Popular</div>
-            : <div role="link" onClick={this.handleChannelRecent}>Get Recent</div>
-          )
-          : (recent
-            ? <div role="link" onClick={this.handleHomePopular}>Get Popular</div>
-            : <div role="link" onClick={this.handleHomeRecent}>Get Recent</div>
-          )
-        }
+        <Switcher />
       </div>
     );
   }

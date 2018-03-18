@@ -1,29 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Channel from './Collection';
 import { typeCollections } from '../utils/type';
 import { defCollections } from '../utils/default';
 import '../style/Channels.css';
 
-class Collections extends Component {
-  static propTypes = {
-    collections: typeCollections,
-  };
+const Collections = ({ collections }) => (
+  <div className="Collections">
+    {collections.map(collection => (
+      <Channel key={collection._id} collection={collection} />))}
+  </div>
+);
 
-  static defaultProps = {
-    collections: defCollections,
-  };
+Collections.propTypes = {
+  collections: typeCollections,
+};
 
-  displayName = 'Collections';
+Collections.defaultProps = {
+  collections: defCollections,
+};
 
-  render() {
-    const { collections } = this.props;
-    return (
-      <div className="Collections">
-        {collections.map(collection => (
-          <Channel key={collection._id} collection={collection} />))}
-      </div>
-    );
-  }
-}
+Collections.displayName = 'Collections';
 
 export default Collections;

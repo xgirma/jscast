@@ -1,5 +1,5 @@
 import React from 'react';
-import {HashRouter, NavLink} from 'react-router-dom';
+import { HashRouter, NavLink } from 'react-router-dom';
 import '../style/Header.css';
 
 const Header = () => (
@@ -13,7 +13,7 @@ const Header = () => (
           >Home
           </NavLink>
         </li>
-        
+
         <li className="Header-library">
           <NavLink
             to="/library"
@@ -21,7 +21,7 @@ const Header = () => (
           >Library
           </NavLink>
         </li>
-        
+
         <li className="Header-about">
           <NavLink
             to="/about"
@@ -29,7 +29,7 @@ const Header = () => (
           >About
           </NavLink>
         </li>
-      
+
       </ul>
     </HashRouter>
   </div>

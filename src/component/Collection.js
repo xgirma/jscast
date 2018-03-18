@@ -31,16 +31,18 @@ class Collection extends Component {
       title, link, description, image, author, copyright,
     } = collection;
     const url = `/library/channel/${title}`;
-    const detail = (<div>
-      <p>{author || null}</p>
-      <p>{description || null}</p>
-      <p>{link || null}</p>
-      <p>{copyright || null}</p>
-    </div>);
+    const detail = (
+      <div>
+        <p>{author || null}</p>
+        <p>{description || null}</p>
+        <p>{link || null}</p>
+        <p>{copyright || null}</p>
+      </div>
+    );
 
     return (
       <div className="Collection">
-        <div className="Collection-opener" onClick={this.handleClick}>
+        <div className="Collection-opener" role="link" onClick={this.handleClick}>
           {this.state.expand ? <FaFolderOpen /> : <FaFolder />}
         </div>
         <div className="Collection-title">

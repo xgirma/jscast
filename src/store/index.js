@@ -1,6 +1,6 @@
 import thunk from 'redux-thunk';
-import reducers from '../reducers/playlist';
 import { applyMiddleware, compose, createStore } from 'redux';
+import reducers from '../reducers/playlist';
 import { getPods, getChannels } from '../actions';
 import { TEN_RECENT } from '../utils/path';
 import initialState from './initial'; // initial state

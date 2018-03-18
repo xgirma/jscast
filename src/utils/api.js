@@ -29,7 +29,7 @@ const podsFromChannel = async (path, channel) => {
   }
 };
 
-const submitLike = async (id) => {
+const like = async (id) => {
   try {
     const response = await fetch(`${BASE_URL}${LIKE_POD}${id}`, {
       method: 'PUT',
@@ -55,7 +55,7 @@ export default {
     return podsFromChannel(path, channel);
   },
   likePod(id) {
-    return submitLike(id);
+    return like(id);
   },
 };
 
