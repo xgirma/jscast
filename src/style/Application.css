@@ -13,20 +13,22 @@
     grid-area: header;
     background-color: #f1c40f;
     align-self: center;
-    border-radius: 8px;
+    /*border-radius: 8px;*/
+    /*margin: -20px 0px 0px 0px;*/
 }
 
 .App-body {
     grid-area: body;
     border: 3px solid #f1c40f;
-    border-radius: 8px;
-    margin-bottom: 7px;
+    margin: 0px 0px 0px 0px;
+    /*border-radius: 8px;*/
+    /*margin-bottom: 7px;*/
 }
 
 .App-footer {
     grid-area: footer;
     background-color: #f1c40f;
     align-self: center;
-    border-radius: 8px;
+    /*border-radius: 8px;*/
 }
 

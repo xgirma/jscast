@@ -30,7 +30,7 @@ const Application = () => (
       </HashRouter>
     </div>
     <div className="App-footer">
-      <Footer/>
+      <Footer />
     </div>
   </div>
 );

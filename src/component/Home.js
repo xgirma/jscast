@@ -7,10 +7,10 @@ import '../style/Home.css';
 
 const Home = () => (
   <div className="Home">
-    <Player />
-    <Toggle />
-    <Playlist />
-    <Playing />
+    <Player className="Home-player"/>
+    <Playing className="Home-playing"/>
+    <Toggle className="Home-toggle"/>
+    <Playlist className="Home-playlist"/>
   </div>
 );
 

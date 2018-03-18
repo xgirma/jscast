@@ -1,3 +1,44 @@
+progress {
+    -webkit-appearance: none;
+}
+
+progress::-webkit-progress-value {
+    background-color: #f1c40f;
+    border-radius: 20px;
+}
+
+progress::-moz-progress-bar {
+    background: #fff;
+    border-radius: 15px;
+}
+
+progress::-webkit-progress-bar {
+    background: #black;
+    border-radius: 15px;
+}
+
 .Player {
+}
+
+.Player-bar {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.Player-play-pause {
+    grid-area: play-pause
+}
+
+.Player-elapsed {
+    grid-area: elapsed
+}
+
+.Player-seek {
+    grid-area: seek
+}
+
+.Player-remaining {
 
 }
+
+

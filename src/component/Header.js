@@ -1,5 +1,5 @@
 import React from 'react';
-import {HashRouter, NavLink} from 'react-router-dom';
+import { HashRouter, NavLink } from 'react-router-dom';
 import '../style/Header.css';
 
 const Header = () => (
@@ -11,14 +11,14 @@ const Header = () => (
         className="Header-home"
       >Home
       </NavLink>
-      
+
       <NavLink
         to="/library"
         exact
         className="Header-library"
       >Library
       </NavLink>
-      
+
       <NavLink
         to="/about"
         exact
