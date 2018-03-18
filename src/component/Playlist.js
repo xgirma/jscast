@@ -22,7 +22,7 @@ class Playlist extends Component {
     const { playlist, onPodClick } = this.props;
 
     return (
-      <div className="container-Playlist">
+      <div className="Playlist">
         {
           playlist.map(pod => (
             <Pod key={pod._id} pod={pod} onPodClick={onPodClick} />

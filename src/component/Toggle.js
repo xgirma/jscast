@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import '../style/Toggle.css';
-import { TEN_RECENT, TEN_POPULAR,
-  TEN_RECENT_BY_CHANNEL, TEN_POPULAR_BY_CHANNEL } from '../utils/path';
+import { TEN_RECENT, TEN_POPULAR } from '../utils/path';
 import { getPods, getPodsByChannel } from '../actions';
 import store from '../store';
 
@@ -45,7 +44,7 @@ class Toggle extends Component {
     const { recent, library } = this.props;
 
     return (
-      <div className="container-Toggle">
+      <div className="Toggle">
         {library
           ? (recent
             ? <div role="link" onClick={this.handleChannelPopular}>Get Popular</div>
@@ -62,11 +61,3 @@ class Toggle extends Component {
 }
 
 export default Toggle;
-
-/*
-: possible list TODO remove
-1. recent: true, library: false => Home page & recent pods
-2. recent: false, library: false => Home page & popular pods
-3. recent: true, library: true => Library page & recent
-4. recent: false, library: true = Library page and popular
- */

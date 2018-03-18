@@ -1,37 +1,38 @@
 import React from 'react';
-import { HashRouter, NavLink } from 'react-router-dom';
+import {HashRouter, NavLink} from 'react-router-dom';
 import '../style/Header.css';
 
 const Header = () => (
-  <HashRouter>
-    <ul className="container-header">
-
-      <li className="item-home">
-        <NavLink
-          to="/"
-          exact
-        >Home
-        </NavLink>
-      </li>
-
-      <li className="item-library">
-        <NavLink
-          to="/library"
-          exact
-        >Library
-        </NavLink>
-      </li>
-
-      <li className="item-about">
-        <NavLink
-          to="/about"
-          exact
-        >About
-        </NavLink>
-      </li>
-
-    </ul>
-  </HashRouter>
+  <div className="Header">
+    <HashRouter>
+      <ul className="Header-list">
+        <li className="Header-home">
+          <NavLink
+            to="/"
+            exact
+          >Home
+          </NavLink>
+        </li>
+        
+        <li className="Header-library">
+          <NavLink
+            to="/library"
+            exact
+          >Library
+          </NavLink>
+        </li>
+        
+        <li className="Header-about">
+          <NavLink
+            to="/about"
+            exact
+          >About
+          </NavLink>
+        </li>
+      
+      </ul>
+    </HashRouter>
+  </div>
 );
 
 export default Header;

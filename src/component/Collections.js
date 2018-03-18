@@ -18,7 +18,7 @@ class Collections extends Component {
   render() {
     const { collections } = this.props;
     return (
-      <div className="Library">
+      <div className="Collections">
         {collections.map(collection => (
           <Channel key={collection._id} collection={collection} />))}
       </div>

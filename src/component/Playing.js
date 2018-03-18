@@ -55,13 +55,13 @@ class Playing extends Component {
     return (
       <div className="Playing">
         <div
-          className="container-Like"
+          className="Playing-Like"
           role="link"
           onClick={this.handleLike}
         >
           <MdThumbUp />
         </div>
-        <div>
+        <div className="Playing-Detail">
           <p>{episodeTitle}</p>
           <p>{title}</p>
           <p>{link}</p>

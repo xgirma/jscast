@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { HashRouter, NavLink } from 'react-router-dom';
 import FaFolder from 'react-icons/lib/fa/folder';
 import FaFolderOpen from 'react-icons/lib/fa/folder-open';
+import { HashRouter, NavLink } from 'react-router-dom';
 import { typeCollection } from '../utils/type';
 import { defCollection } from '../utils/default';
 import '../style/Channel.css';
@@ -39,11 +39,11 @@ class Collection extends Component {
     </div>);
 
     return (
-      <div className="Channel">
-        <div className="item-opener" onClick={this.handleClick}>
+      <div className="Collection">
+        <div className="Collection-opener" onClick={this.handleClick}>
           {this.state.expand ? <FaFolderOpen /> : <FaFolder />}
         </div>
-        <div>
+        <div className="Collection-title">
           <HashRouter>
             <NavLink
               to={url}
@@ -54,7 +54,7 @@ class Collection extends Component {
             </NavLink>
           </HashRouter>
         </div>
-        <div className="item-col-detail">
+        <div className="Collection-detail">
           {this.state.expand ? detail : null}
         </div>
       </div>

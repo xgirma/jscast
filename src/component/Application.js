@@ -11,16 +11,17 @@ import '../style/Application.css';
 class Application extends Component {
   render() {
     return (
-      <div className="app">
-        <div className="app-header">
+      <div className="App">
+        <div className="App-header">
           <Header />
         </div>
-        <div className="app-body">
+        <div className="App-body">
           <HashRouter>
             <Switch>
               <Route exact path="/" component={HomeContainer} />
               <Route exact path="/library" component={Library} />
-              <Route exact path="/library/channel/:channel" render={props => <ChannelContainer {...props} />} />
+              <Route exact path="/library/channel/:channel"
+                     render={props => <ChannelContainer {...props} />} />
               <Route exact path="/about" component={About} />
               <Route component={NotFound} />
             </Switch>

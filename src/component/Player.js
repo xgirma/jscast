@@ -40,12 +40,12 @@ class Player extends Component {
     return (
       <div className="Player">
         <div
-          className="navigation"
+          className="Player-navigation"
           role="link"
           onClick={this.handlePrevious}
         > <FaArrowCircleLeft />
         </div>
-        <div className="audio-player">
+        <div className="Player-player">
           <ReactAudioPlayer
             src={url}
             controls
@@ -54,12 +54,13 @@ class Player extends Component {
         </div>
         <div className="playing-title"> {title} </div>
         <div
-          className="navigation"
+          className="Player-navigation"
           role="link"
           onClick={this.handleNext}
         > <FaArrowCircleRight />
         </div>
-      </div>);
+      </div>
+    );
   }
 }
 

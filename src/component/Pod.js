@@ -25,7 +25,7 @@ class Pod extends Component {
   render() {
     const { pod } = this.props;
     return (
-      <div className="container-Pod" role="link" onClick={this.handlePodClick}>
+      <div className="Pod" role="link" onClick={this.handlePodClick}>
         <b>{pod.published}</b>: {pod.episodeTitle}
       </div>
     );

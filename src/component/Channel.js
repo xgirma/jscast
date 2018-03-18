@@ -6,10 +6,9 @@ import Toggle from '../containers/Toggle';
 import '../style/Channel.css';
 
 class Channel extends Component {
-  
   render() {
     return (
-      <div className="container-Channel">
+      <div className="Channel">
         <Player />
         <Toggle />
         <Playlist />
