@@ -1,6 +1,7 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import About from './About';
+import Footer from './Footer';
 import Header from './Header';
 import Library from './Library';
 import NotFound from './NotFound';
@@ -27,6 +28,9 @@ const Application = () => (
           <Route component={NotFound} />
         </Switch>
       </HashRouter>
+    </div>
+    <div className="App-footer">
+      <Footer/>
     </div>
   </div>
 );

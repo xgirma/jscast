@@ -1,44 +1,18 @@
 .Header {
-    /*transform: rotate(-90deg);*/
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "home about library";
+    align-self: center;
 }
 
-.Header-list {
-    list-style: none;
+.Header-home {
+    grid-area: home;
+    align-self: center;
 }
-
-/*.Header-home:hover {*/
-    /*background-color: #f1c40f;*/
-/*}*/
-
-/*.Header-library:hover {*/
-    /*background-color: #e67e22;*/
-/*}*/
-
-/*.Header-about:hover {*/
-    /*background-color: #e74c3c;*/
-/*}*/
-
-
-/*.Header-home {*/
-    /*background-color: #000;*/
-/*}*/
-
-/*.Header-library {*/
-    /*background-color: #000;*/
-/*}*/
-
-/*.Header-about {*/
-    /*background-color: #000;*/
-/*}*/
-
-/*.Header-home:active {*/
-    /*background-color: #f1c40f;*/
-/*}*/
-
-/*.Header-library:active {*/
-    /*background-color: #f1c40f;*/
-/*}*/
-
-/*.Header-about:active {*/
-    /*background-color: #f1c40f;*/
-/*}*/
+.Header-library {
+    grid-area: library;
+}
+.Header-library {
+    grid-area: about;
+}
