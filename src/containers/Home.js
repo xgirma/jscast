@@ -7,7 +7,7 @@ import '../style/Channel.css';
 
 class HomeContainer extends Component {
   
-  displayName = 'Home';
+  displayName = 'HomeContainer';
   
   componentDidMount() {
     store.dispatch(getPods(TEN_RECENT, true, false));
