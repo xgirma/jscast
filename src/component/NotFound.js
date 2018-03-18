@@ -8,8 +8,6 @@ class NotFound extends Component {
 
   displayName = 'NotFound';
 
-  state = {};
-
   render() {
     return (
       <div className="NotFound">

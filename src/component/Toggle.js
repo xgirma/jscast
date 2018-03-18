@@ -20,10 +20,8 @@ class Toggle extends Component {
 
   displayName = 'Toggle';
 
-  state = {};
-
   handleHomeRecent = () => {
-    store.dispatch(getPods(TEN_RECENT, true, false));
+    store.dispatch(this.props.getPods(TEN_RECENT, true, false));
   };
 
   handleHomePopular = () => {
@@ -50,9 +48,11 @@ class Toggle extends Component {
         }
         return <div role="link" onClick={this.handleChannelRecent}>Get Recent</div>;
       }
+      
       if (recent) {
         return <div role="link" onClick={this.handleHomePopular}>Get Popular</div>;
       }
+      
       return <div role="link" onClick={this.handleHomeRecent}>Get Recent</div>;
     };
 

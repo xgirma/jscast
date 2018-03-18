@@ -8,8 +8,6 @@ class About extends Component {
 
   displayName = 'About';
 
-  state = {};
-
   render() {
     return (
       <div className="About">
