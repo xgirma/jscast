@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import '../style/Toggle.css';
+import store from '../store';
 import { TEN_RECENT, TEN_POPULAR } from '../utils/path';
 import { getPods, getPodsByChannel } from '../actions';
-import store from '../store';
+import '../style/Toggle.css';
 
 class Toggle extends Component {
   static propTypes = {

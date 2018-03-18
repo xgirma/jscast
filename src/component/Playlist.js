@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Pod from './Pod';
-import { typePlaylist } from '../utils/type';
 import { defPlaylist } from '../utils/default';
+import { typePlaylist } from '../utils/type';
 import '../style/Playlist.css';
 
 const Playlist = ({ playlist, onPodClick }) => (

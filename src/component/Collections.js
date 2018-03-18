@@ -1,7 +1,7 @@
 import React from 'react';
 import Channel from './Collection';
-import { typeCollections } from '../utils/type';
 import { defCollections } from '../utils/default';
+import { typeCollections } from '../utils/type';
 import '../style/Channels.css';
 
 const Collections = ({ collections }) => (

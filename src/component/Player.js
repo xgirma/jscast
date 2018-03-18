@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import FaArrowCircleRight from 'react-icons/lib/fa/arrow-circle-right';
-import FaArrowCircleLeft from 'react-icons/lib/fa/arrow-circle-left';
 import ReactAudioPlayer from 'react-audio-player';
+import FaArrowCircleLeft from 'react-icons/lib/fa/arrow-circle-left';
+import FaArrowCircleRight from 'react-icons/lib/fa/arrow-circle-right';
 import PropTypes from 'prop-types';
-import { typePlaylist } from '../utils/type';
 import { defPlaylist } from '../utils/default';
+import { typePlaylist } from '../utils/type';
 import '../style/Player.css';
 
 class Player extends Component {

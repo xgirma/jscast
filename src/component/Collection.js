@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import FaFolder from 'react-icons/lib/fa/folder';
 import FaFolderOpen from 'react-icons/lib/fa/folder-open';
-import { HashRouter, NavLink } from 'react-router-dom';
-import { typeCollection } from '../utils/type';
 import { defCollection } from '../utils/default';
+import { typeCollection } from '../utils/type';
+import { HashRouter, NavLink } from 'react-router-dom';
 import '../style/Channel.css';
 
 class Collection extends Component {

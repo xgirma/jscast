@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { typePod } from '../utils/type';
 import { defPod } from '../utils/default';
+import { typePod } from '../utils/type';
 import '../style/Pod.css';
 
 class Pod extends Component {

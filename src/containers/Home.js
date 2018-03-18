@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import store from '../store';
 import Home from '../component/Home';
-import { TEN_RECENT } from '../utils/path';
+import store from '../store';
 import { getPods } from '../actions';
+import { TEN_RECENT } from '../utils/path';
 import '../style/Channel.css';
 
 class HomeContainer extends Component {

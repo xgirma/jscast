@@ -1,8 +1,8 @@
 import React from 'react';
-import Player from '../containers/Player';
-import Playlist from '../containers/Playlist';
-import Playing from '../containers/Playing';
 import Toggle from '../containers/Toggle';
+import Player from '../containers/Player';
+import Playing from '../containers/Playing';
+import Playlist from '../containers/Playlist';
 import '../style/Channel.css';
 
 const Channel = () => (
