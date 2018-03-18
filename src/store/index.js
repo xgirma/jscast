@@ -1,9 +1,11 @@
 import thunk from 'redux-thunk';
 import { applyMiddleware, compose, createStore } from 'redux';
-import reducers from '../reducers/playlist';
+import reducers from '../reducers';
 import { getPods, getChannels } from '../actions';
 import { TEN_RECENT } from '../utils/path';
 import initialState from './initial'; // initial state
+
+console.log(reducers);
 
 const middleware = [thunk];
 const enhancers = [];
