@@ -21,7 +21,7 @@ class Toggle extends Component {
   displayName = 'Toggle';
 
   handleHomeRecent = () => {
-    store.dispatch(this.props.getPods(TEN_RECENT, true, false));
+    store.dispatch(getPods(TEN_RECENT, true, false));
   };
 
   handleHomePopular = () => {

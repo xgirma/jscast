@@ -1,3 +1,19 @@
 .Header {
+    transform: rotate(-90deg);
+}
 
+.Header-list {
+    list-style: none;
+}
+
+.Header-home {
+    background-color: #f1c40f;
+}
+
+.Header-library {
+    background-color: #e67e22;
+}
+
+.Header-about {
+    background-color: #e74c3c;
 }

@@ -1,3 +1,18 @@
 .App {
     text-align: center;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100px auto;
+    grid-template-areas:
+            "header"
+            "body";
 }
+
+.App-header {
+    grid-area: header;
+}
+
+.App-body {
+    grid-area: body
+}
+
