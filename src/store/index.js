@@ -5,8 +5,6 @@ import { getPods, getChannels } from '../actions';
 import { TEN_RECENT } from '../utils/path';
 import initialState from './initial'; // initial state
 
-console.log(reducers);
-
 const middleware = [thunk];
 const enhancers = [];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
