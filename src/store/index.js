@@ -1,9 +1,9 @@
-import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from '../reducers/playlist';
-import initialState from './initial'; // initial state
+import { applyMiddleware, compose, createStore } from 'redux';
 import { getPods, getChannels } from '../actions';
 import { TEN_RECENT } from '../utils/path';
+import initialState from './initial'; // initial state
 
 const middleware = [thunk];
 const enhancers = [];
