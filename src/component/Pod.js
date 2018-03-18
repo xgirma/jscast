@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import { defPod } from '../utils/default';
 import { typePod } from '../utils/type';
 import '../style/Pod.css';
@@ -24,9 +25,10 @@ class Pod extends Component {
 
   render() {
     const { pod } = this.props;
+    const published = moment(pod.published).format('MMM DD YY');
     return (
       <div className="Pod" role="link" onClick={this.handlePodClick}>
-        <b>{pod.published}</b>: {pod.episodeTitle}
+        <b>{published}</b>: {pod.episodeTitle}
       </div>
     );
   }
