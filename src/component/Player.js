@@ -4,8 +4,6 @@ import moment from 'moment';
 import Duration from '../utils/Duration';
 import FaPause from 'react-icons/lib/fa/pause';
 import FaPlay from 'react-icons/lib/fa/play';
-import FaArrowCircleLeft from 'react-icons/lib/fa/arrow-circle-left';
-import FaArrowCircleRight from 'react-icons/lib/fa/arrow-circle-right';
 import PropTypes from 'prop-types';
 import {defPlaylist} from '../utils/default';
 import {typePlaylist} from '../utils/type';

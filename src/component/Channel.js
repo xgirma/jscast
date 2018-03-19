@@ -8,9 +8,9 @@ import '../style/Channel.css';
 const Channel = () => (
   <div className="Channel">
     <Player />
+    <Playing />
     <Toggle />
     <Playlist />
-    <Playing />
   </div>
 );
 
