@@ -1,34 +1,25 @@
 .App {
     display: grid;
-    grid-template-columns: 1fr 650px 1fr;
-    grid-template-rows: 50px auto 130px;
-    grid-template-areas:
-            ". header ."
-            ". body ."
-            ". footer .";
-    text-align: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 20px 1fr 100px;
+    grid-template-areas: ". head ." ". body ." ". footer .";
+    grid-row-gap: 0em;
 }
 
 .App-header {
-    grid-area: header;
-    background-color: #f1c40f;
-    align-self: center;
-    /*border-radius: 8px;*/
-    /*margin: -20px 0px 0px 0px;*/
+    grid-area: head;
+    border-collapse: separate;
+    /*border-bottom: 5px solid black;*/
+    /*background-color: green;*/
 }
 
 .App-body {
     grid-area: body;
-    border: 3px solid #f1c40f;
-    margin: 0px 0px 0px 0px;
-    /*border-radius: 8px;*/
-    /*margin-bottom: 7px;*/
+    /*background-color: yellow;*/
 }
 
 .App-footer {
     grid-area: footer;
-    background-color: #f1c40f;
-    align-self: center;
-    /*border-radius: 8px;*/
+    /*background-color: red;*/
 }
 

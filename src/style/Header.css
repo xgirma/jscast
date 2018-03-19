@@ -1,18 +1,22 @@
 .Header {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "home about library";
-    align-self: center;
+    grid-template-columns: 60px 60px 60px 1fr;
+    grid-template-rows: 20px;
+    grid-template-areas: "home library about . ";
+    grid-row-gap: 0em;
 }
 
 .Header-home {
     grid-area: home;
-    align-self: center;
+    /*background-color: green;*/
 }
+
 .Header-library {
     grid-area: library;
+    /*background-color: yellow;*/
+
 }
-.Header-library {
+.Header-about {
     grid-area: about;
+    /*background-color: red;*/
 }

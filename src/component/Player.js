@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ReactPlayer from 'react-player';
+import moment from 'moment';
 import Duration from '../utils/Duration';
 import FaPause from 'react-icons/lib/fa/pause';
 import FaPlay from 'react-icons/lib/fa/play';
@@ -70,7 +71,7 @@ class Player extends Component {
     this.setState({playing: false});
   };
   
-  onSeekMouseDown = (e) => {
+  onSeekMouseDown = () => {
     this.setState({seeking: true});
   };
   
@@ -106,63 +107,61 @@ class Player extends Component {
       url, playing, volume, muted, loop, played, loaded, duration, playbackRate,
     } = this.state;
     
+    const {playlist} = this.props;
+    const {episodeTitle, published} = playlist[0];
+    const date = moment(published).format('MMM DD YY');
+    
     return (
       <div className="Player">
-        <section>
-          <div>
-            <ReactPlayer
-              ref={this.ref}
-              className="react-player"
-              width="100%"
-              height="100%"
-              url={url}
-              playing={playing}
-              loop={loop}
-              playbackRate={playbackRate}
-              volume={volume}
-              muted={muted}
-              onPlay={this.onPlay}
-              onPause={this.onPause}
-              onEnded={this.onEnded}
-              onProgress={this.onProgress}
-              onDuration={this.onDuration}
-            />
+        <ReactPlayer
+          ref={this.ref}
+          className="react-player"
+          width="100%"
+          height="100%"
+          url={url}
+          playing={playing}
+          loop={loop}
+          playbackRate={playbackRate}
+          volume={volume}
+          muted={muted}
+          onPlay={this.onPlay}
+          onPause={this.onPause}
+          onEnded={this.onEnded}
+          onProgress={this.onProgress}
+          onDuration={this.onDuration}
+        />
+        <progress max={1} value={played} className="Player-bar"/>
+        <input
+          type="range"
+          className="Player-seek"
+          min={0}
+          max={1}
+          step="any"
+          value={played}
+          onMouseDown={this.onSeekMouseDown}
+          onChange={this.onSeekChange}
+          onMouseUp={this.onSeekMouseUp}
+        />
+        <div className="Player-title">{episodeTitle} - <span style={{fontWeight:'bold'}}>{date}</span></div>
+        <h4 className="Player-controls">
+          <div
+            role="button"
+            onClick={this.playPause}
+            className="Player-play">
+            {playing
+              ? <FaPause/>
+              : <FaPlay/>
+            }
           </div>
-  
-          <div className="Player-elapsed">
-            <Duration seconds={duration * played}/> | <Duration seconds={duration * (1 - played)}/>
+          <div className="Player-duration" style={{alignContent:'end'}}>
+            <Duration seconds={duration * played}/>
+            <span>{" - "}</span>
+            <Duration seconds={duration * (1 - played)}/>
           </div>
-          
-          <div className="Player-bar">
-            <FaArrowCircleLeft />
-            <span className="Player-play-pause"
-                 role="button"
-                 onClick={this.playPause}
-                 style={{color: "#e74c3c"}}
-            >
-              {playing ? <FaPause/> : <FaPlay/>}
-            </span>
-            <span> {" | "}</span>
-            <progress max={1} value={played} style={{color: 'red'}}/>
-            <FaArrowCircleRight />
-          </div>
-  
-          <div className="Player-seek">
-            <input
-              type="range"
-              min={0}
-              max={1}
-              step="any"
-              value={played}
-              onMouseDown={this.onSeekMouseDown}
-              onChange={this.onSeekChange}
-              onMouseUp={this.onSeekMouseUp}
-            />
-          </div>
-          
-          
-          
-        </section>
+        </h4>
+        <div className="Player-published">
+        
+        </div>
       </div>
     );
   }
