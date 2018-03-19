@@ -102,10 +102,11 @@ class Player extends Component {
   
   render() {
     const {
-      url, playing, volume, muted, loop, played, loaded, duration, playbackRate,
+      playing, volume, muted, loop, played, loaded, duration, playbackRate,
     } = this.state;
     
     const {playlist} = this.props;
+    const { url } = playlist[0];
     const {episodeTitle, published} = playlist[0];
     const date = moment(published).format('MMM DD YY');
     

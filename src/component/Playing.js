@@ -3,6 +3,8 @@ import h2p from 'html2plaintext';
 import MdThumbUp from 'react-icons/lib/md/thumb-up';
 import FaLongArrowLeft from 'react-icons/lib/fa/long-arrow-left';
 import FaLongArrowRight from 'react-icons/lib/fa/long-arrow-right';
+import FaFacebookOfficial from 'react-icons/lib/fa/facebook-official';
+import FaTwitter from 'react-icons/lib/fa/twitter';
 import PropTypes from 'prop-types';
 import {defPod} from '../utils/default';
 import {getPods} from '../actions';
@@ -77,6 +79,10 @@ class Playing extends Component {
           <span className="Playing-like" role="link" onClick={this.handleLike}>
             <MdThumbUp />
           </span>
+          <span>{" "}</span>
+          <FaFacebookOfficial />
+          <span>{" "}</span>
+          <span><FaTwitter/></span>
           <span>{" "}</span>
           <span><FaLongArrowRight/></span>
         </h3>
