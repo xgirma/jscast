@@ -2,12 +2,17 @@ import React from 'react';
 import Channel from './Collection';
 import { defCollections } from '../utils/default';
 import { typeCollections } from '../utils/type';
-import '../style/Channels.css';
+import '../style/Collections.css';
 
 const Collections = ({ collections }) => (
   <div className="Collections">
-    {collections.map(collection => (
-      <Channel key={collection._id} collection={collection} />))}
+    <div className="Collections-bar">
+      {""}
+    </div>
+    <div className="Collections-list">
+      {collections.map(collection => (
+        <Channel key={collection._id} collection={collection} />))}
+    </div>
   </div>
 );
 

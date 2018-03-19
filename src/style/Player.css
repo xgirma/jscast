@@ -36,7 +36,6 @@
     grid-area: pplay;
     color: black;
     vertical-align: text-top;
-    /*background-color: green;*/
 }
 
 
@@ -45,38 +44,4 @@
     display: flex;
     vertical-align: text-bottom;
     grid-area: pduration;
-    /*background-color: red;*/
 }
-
-/*.Player-played {*/
-    /*grid-area: pplayed;*/
-    /*background-color: black;*/
-    /*color: white;*/
-    /*height: 100px;*/
-/*}*/
-
-/*.Player-remaining {*/
-    /*grid-area: premaining;*/
-    /*background-color: black;*/
-    /*color: white;*/
-    /*height: 100px;*/
-/*}*/
-
-
-
-
-
-
-/*.Player-play-pause {*/
-    /*grid-area: pp;*/
-/*}*/
-
-/*.Player-elapsed {*/
-
-/*}*/
-
-
-
-
-
-

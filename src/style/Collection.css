@@ -1,0 +1,32 @@
+.Collection {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px auto;
+    grid-template-areas:
+            "libtop"
+            "libdetail";
+    padding-bottom: 10px;
+}
+
+.Collection-top {
+    grid-area: libtop;
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+            "opener libtitle";
+    grid-column-gap: 10px;
+}
+
+.Collection-opener {
+    grid-area: opener;
+}
+
+.Collection-title {
+    grid-area: libtitle;
+}
+
+.Collection-detail {
+    grid-area: libdetail;
+    margin: 0em;
+}

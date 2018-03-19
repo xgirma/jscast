@@ -4,7 +4,7 @@ import FaFolderOpen from 'react-icons/lib/fa/folder-open';
 import { defCollection } from '../utils/default';
 import { typeCollection } from '../utils/type';
 import { HashRouter, NavLink } from 'react-router-dom';
-import '../style/Channel.css';
+import '../style/Collection.css';
 
 class Collection extends Component {
   static propTypes = {
@@ -33,7 +33,7 @@ class Collection extends Component {
     const url = `/library/channel/${title}`;
     const detail = (
       <div>
-        <p>{author || null}</p>
+        <p style={{fontWeight:'bold'}}>{author || null}</p>
         <p>{description || null}</p>
         <p>{link || null}</p>
         <p>{copyright || null}</p>
@@ -42,19 +42,21 @@ class Collection extends Component {
 
     return (
       <div className="Collection">
-        <div className="Collection-opener" role="link" onClick={this.handleClick}>
-          {this.state.expand ? <FaFolderOpen /> : <FaFolder />}
-        </div>
-        <div className="Collection-title">
-          <HashRouter>
-            <NavLink
-              to={url}
-              exact
-              collection={collection}
-            >
-              {title}
-            </NavLink>
-          </HashRouter>
+        <div className="Collection-top">
+          <div className="Collection-opener" role="link" onClick={this.handleClick}>
+            {this.state.expand ? <FaFolderOpen /> : <FaFolder />}
+          </div>
+          <div className="Collection-title">
+            <HashRouter>
+              <NavLink
+                to={url}
+                exact
+                collection={collection}
+              >
+                {title}
+              </NavLink>
+            </HashRouter>
+          </div>
         </div>
         <div className="Collection-detail">
           {this.state.expand ? detail : null}
