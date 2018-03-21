@@ -38,7 +38,7 @@ class Player extends Component {
   };
   
   state = {
-    url: 'https://storage.googleapis.com/media-session/elephants-dream/the-wires.mp3',
+    url: '',
     playing: false,
     volume: 0.8,
     muted: false,
@@ -50,15 +50,18 @@ class Player extends Component {
   };
   
   componentDidMount() {
-    const {playlist} = this.props;
+    const {playlist, auto} = this.props;
     const {url} = playlist[0];
     this.setState({
       url,
+      playing: auto,
     });
   }
   
   playPause = () => {
-    this.setState({playing: !this.state.playing});
+    this.setState({
+      playing: !this.state.playing
+    });
   };
   
   onPlay = () => {
@@ -74,7 +77,9 @@ class Player extends Component {
   };
   
   onSeekChange = (e) => {
-    this.setState({played: parseFloat(e.target.value)});
+    this.setState({
+      played: parseFloat(e.target.value)
+    });
   };
   
   onSeekMouseUp = (e) => {
@@ -89,7 +94,9 @@ class Player extends Component {
   };
   
   onEnded = () => {
-    this.setState({playing: this.state.loop});
+    this.setState({
+      playing: this.state.loop
+    });
   };
   
   onDuration = (duration) => {
@@ -102,7 +109,7 @@ class Player extends Component {
   
   render() {
     const {
-      playing, volume, muted, loop, played, loaded, duration, playbackRate,
+      playing, volume, muted, loop, played, duration, playbackRate,
     } = this.state;
     
     const {playlist} = this.props;
@@ -141,7 +148,9 @@ class Player extends Component {
           onChange={this.onSeekChange}
           onMouseUp={this.onSeekMouseUp}
         />
-        <div className="Player-title">{episodeTitle} - <span style={{fontWeight:'bold'}}>{date}</span></div>
+        <div className="Player-title">
+          {episodeTitle} - <span style={{fontWeight:'bold'}}>{date}</span>
+        </div>
         <h4 className="Player-controls">
           <div
             role="button"
@@ -159,7 +168,6 @@ class Player extends Component {
           </div>
         </h4>
         <div className="Player-published">
-        
         </div>
       </div>
     );

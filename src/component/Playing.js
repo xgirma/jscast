@@ -7,7 +7,7 @@ import FaFacebookOfficial from 'react-icons/lib/fa/facebook-official';
 import FaTwitter from 'react-icons/lib/fa/twitter';
 import PropTypes from 'prop-types';
 import {defPod} from '../utils/default';
-import {getPods} from '../actions';
+import {getPods, nextPod, previousPod} from '../actions';
 import {typePlaylist} from '../utils/type';
 import {TEN_RECENT, TEN_POPULAR} from '../utils/path';
 import '../style/Playing.css';
@@ -50,6 +50,16 @@ class Playing extends Component {
     });
   };
   
+  handlePrevious = () => {
+    const {playlist, previousPod} = this.props;
+    previousPod(playlist[9]._id);
+  };
+  
+  handleNext = () => {
+    const {playlist, nextPod} = this.props;
+    nextPod(playlist[1]._id);
+  };
+  
   render() {
     const {playlist} = this.props;
     const {
@@ -74,17 +84,21 @@ class Playing extends Component {
         </div>
         
         <h3>
-          <span><FaLongArrowLeft/></span>
+          <span className="Playing-previous" role="link" onClick={this.handlePrevious}>
+            <FaLongArrowLeft/>
+          </span>
           <span>{" "}</span>
           <span className="Playing-like" role="link" onClick={this.handleLike}>
             <MdThumbUp />
           </span>
           <span>{" "}</span>
-          <FaFacebookOfficial />
+          <span><FaFacebookOfficial /></span>
           <span>{" "}</span>
           <span><FaTwitter/></span>
           <span>{" "}</span>
-          <span><FaLongArrowRight/></span>
+          <span className="Playing-next" role="link" onClick={this.handleNext}>
+            <FaLongArrowRight/>
+          </span>
         </h3>
       </div>
     );

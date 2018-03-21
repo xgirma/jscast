@@ -71,7 +71,7 @@ const collections = [
 ];
 
 export default {
-  autoPlay: false,
+  auto: false,
   playlist,
   collections,
   channel: null,
