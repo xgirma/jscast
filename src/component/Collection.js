@@ -35,7 +35,15 @@ class Collection extends Component {
     const detail = (
       <div className="Collection-detail">
         <div className="detail-image">
-          <Thumb image={image}/>
+          <HashRouter>
+            <NavLink
+              to={url}
+              exact
+              collection={collection}
+            >
+              <Thumb image={image}/>
+            </NavLink>
+          </HashRouter>
         </div>
         <div className="detail-text">
           <p style={{fontWeight: 'bold'}}>{author || null}</p>

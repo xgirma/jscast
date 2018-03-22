@@ -65,11 +65,11 @@ class Player extends Component {
   };
   
   onPlay = () => {
-    this.setState({playing: true});
+    this.setState({ playing: true });
   };
   
   onPause = () => {
-    this.setState({playing: false});
+    this.setState({ playing: false });
   };
   
   onSeekMouseDown = () => {
@@ -83,7 +83,7 @@ class Player extends Component {
   };
   
   onSeekMouseUp = (e) => {
-    this.setState({seeking: false});
+    this.setState({ seeking: false });
     this.player.seekTo(parseFloat(e.target.value));
   };
   
@@ -100,7 +100,7 @@ class Player extends Component {
   };
   
   onDuration = (duration) => {
-    this.setState({duration});
+    this.setState({ duration });
   };
   
   ref = (player) => {
@@ -112,9 +112,9 @@ class Player extends Component {
       playing, volume, muted, loop, played, duration, playbackRate,
     } = this.state;
     
-    const {playlist} = this.props;
+    const { playlist } = this.props;
     const { url } = playlist[0];
-    const {episodeTitle, published} = playlist[0];
+    const { episodeTitle, published } = playlist[0];
     const date = moment(published).format('MMM DD YY');
     
     return (
