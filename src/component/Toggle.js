@@ -40,20 +40,28 @@ class Toggle extends Component {
 
   render() {
     const { recent, library } = this.props;
-
+    const style = {fontWeight: 'bold'};
     const Switcher = () => {
       if (library) {
         if (recent) {
-          return <div role="link" onClick={this.handleChannelPopular}>Get Popular</div>;
+          return <div role="link"
+                      onClick={this.handleChannelPopular}
+                      style={style}>Get Popular</div>;
         }
-        return <div role="link" onClick={this.handleChannelRecent}>Get Recent</div>;
+        return <div role="link"
+                    onClick={this.handleChannelRecent}
+                    style={style}>Get Recent</div>;
       }
 
       if (recent) {
-        return <div role="link" onClick={this.handleHomePopular}>Get Popular</div>;
+        return <div role="link"
+                    onClick={this.handleHomePopular}
+                    style={style}>Get Popular</div>;
       }
 
-      return <div role="link" onClick={this.handleHomeRecent}>Get Recent</div>;
+      return <div role="link"
+                  onClick={this.handleHomeRecent}
+                  style={style}>Get Recent</div>;
     };
 
     return (

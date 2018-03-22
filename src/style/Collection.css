@@ -29,4 +29,18 @@
 .Collection-detail {
     grid-area: libdetail;
     margin: 0em;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+            "detailImage detailText";
+    grid-column-gap: 10px;
+}
+
+.detail-image {
+    grid-area: detailImage
+}
+
+.detail-text {
+    grid-area: detailText
 }

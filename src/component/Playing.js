@@ -7,7 +7,7 @@ import FaFacebookOfficial from 'react-icons/lib/fa/facebook-official';
 import FaTwitter from 'react-icons/lib/fa/twitter';
 import PropTypes from 'prop-types';
 import {defPod} from '../utils/default';
-import {getPods, nextPod, previousPod} from '../actions';
+import {getPods} from '../actions';
 import {typePlaylist} from '../utils/type';
 import {TEN_RECENT, TEN_POPULAR} from '../utils/path';
 import '../style/Playing.css';
