@@ -4,6 +4,7 @@ import FaFolderOpen from 'react-icons/lib/fa/folder-open';
 import { defCollection } from '../utils/default';
 import { typeCollection } from '../utils/type';
 import { HashRouter, NavLink } from 'react-router-dom';
+import Thumb from './Thumb';
 import '../style/Collection.css';
 
 class Collection extends Component {
@@ -61,6 +62,7 @@ class Collection extends Component {
         <div className="Collection-detail">
           {this.state.expand ? detail : null}
         </div>
+        <Thumb image={image}/>
       </div>
     );
   }
