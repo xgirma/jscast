@@ -5,11 +5,11 @@ import { defPlaylist } from '../utils/default';
 import { typePlaylist } from '../utils/type';
 import '../style/Playlist.css';
 
-const Playlist = ({ playlist, onPodClick }) => (
+const Playlist = ({ playlist, onPodClick, recent }) => (
   <div className="Playlist">
     {
       playlist.map(pod => (
-        <Pod key={pod._id} pod={pod} onPodClick={onPodClick} />
+        <Pod key={pod._id} pod={pod} onPodClick={onPodClick} recent={recent}/>
       ))
     }
   </div>

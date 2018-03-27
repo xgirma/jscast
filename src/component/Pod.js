@@ -24,11 +24,11 @@ class Pod extends Component {
   };
 
   render() {
-    const { pod } = this.props;
+    const { pod, recent } = this.props;
     const published = moment(pod.published).format('MMM DD YY');
     return (
       <div className="Pod" role="link" onClick={this.handlePodClick}>
-        <b>{published}</b>: {pod.episodeTitle}
+        <b>{published}</b>: {pod.episodeTitle} <b>{!recent && <span> : {pod.likes}</span>}</b>
       </div>
     );
   }

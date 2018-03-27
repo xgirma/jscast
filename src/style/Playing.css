@@ -1,3 +1,11 @@
-.Playing {
+.Playing-previous:hover {
+    color:red;
+}
 
+.Playing-like:hover {
+    color:red;
+}
+
+.Playing-next:hover {
+    color:red;
 }

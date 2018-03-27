@@ -1,5 +1,6 @@
-.Pod {
-
+.Pod:hover {
+    color:red;
+    font-weight: bold;
 }
 
 .Pod:nth-child(odd) {

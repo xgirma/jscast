@@ -1,3 +1,6 @@
-.Toggle {
-
+.Toggle:hover {
+    display: grid;
+    color:red;
+    cursor: pointer;
+    grid-row-gap: 1em;
 }

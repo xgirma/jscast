@@ -46,22 +46,22 @@ class Toggle extends Component {
         if (recent) {
           return <div role="link"
                       onClick={this.handleChannelPopular}
-                      style={style}>Get Popular</div>;
+                      style={style}>Get Popular:</div>;
         }
         return <div role="link"
                     onClick={this.handleChannelRecent}
-                    style={style}>Get Recent</div>;
+                    style={style}>Get Recent:</div>;
       }
 
       if (recent) {
         return <div role="link"
                     onClick={this.handleHomePopular}
-                    style={style}>Get Popular</div>;
+                    style={style}>Get Popular:</div>;
       }
 
       return <div role="link"
                   onClick={this.handleHomeRecent}
-                  style={style}>Get Recent</div>;
+                  style={style}>Get Recent:</div>;
     };
 
     return (

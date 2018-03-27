@@ -18,11 +18,9 @@ class Player extends Component {
   };
   static defaultProps = {
     playlist: defPlaylist,
-    nextPod: () => {
-    },
-    previousPod: () => {
-    },
-    auto: true,
+    nextPod: () => {},
+    previousPod: () => {},
+    auto: false,
   };
   
   displayName = 'Player';
@@ -149,7 +147,7 @@ class Player extends Component {
           onMouseUp={this.onSeekMouseUp}
         />
         <div className="Player-title">
-          {episodeTitle} - <span style={{fontWeight:'bold'}}>{date}</span>
+          Now Playing: {episodeTitle} - <span style={{fontWeight:'bold'}}>{date}</span>
         </div>
         <h4 className="Player-controls">
           <div

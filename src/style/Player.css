@@ -18,6 +18,11 @@
     width: 100%;
 }
 
+.Player-seek:hover {
+    color: red;
+    cursor: pointer;
+}
+
 .Player-title{
     grid-area: ptitle;
     width: 100%;
@@ -38,7 +43,10 @@
     vertical-align: text-top;
 }
 
-
+.Player-play:hover {
+    color: red;
+    cursor: pointer;
+}
 
 .Player-duration {
     display: flex;
