@@ -38,9 +38,9 @@
 }
 
 .detail-image {
-    grid-area: detailImage
+    grid-area: detailImage;
 }
 
 .detail-text {
-    grid-area: detailText
+    grid-area: detailText;
 }

@@ -1,6 +1,26 @@
-.Toggle:hover {
-    display: grid;
+.Toggle {
+    /*display: grid;*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /*text-align: center;*/
+}
+
+.Toggle-inactive:hover {
     color:red;
     cursor: pointer;
-    grid-row-gap: 1em;
+}
+
+.Toggle-active {
+    border: 1px solid black;
+    font-weight: bold;
+    display: inline;
+    color: black;
+}
+
+.Toggle-inactive {
+    border: 1px solid black;
+    font-weight: bold;
+    background-color: #3c3f41;
+    color: white;
+    display: inline;
 }

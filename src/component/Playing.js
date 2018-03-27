@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import h2p from 'html2plaintext';
 import MdThumbUp from 'react-icons/lib/md/thumb-up';
-import FaLongArrowLeft from 'react-icons/lib/fa/long-arrow-left';
-import FaLongArrowRight from 'react-icons/lib/fa/long-arrow-right';
+import FaArrowLeft from 'react-icons/lib/fa/arrow-left';
+import FaArrowRight from 'react-icons/lib/fa/arrow-right';
 import FaFacebookOfficial from 'react-icons/lib/fa/facebook-official';
+import FaPinterestSquare from 'react-icons/lib/fa/pinterest-square';
 import FaTwitter from 'react-icons/lib/fa/twitter';
 import PropTypes from 'prop-types';
 import {defPod} from '../utils/default';
@@ -62,9 +63,7 @@ class Playing extends Component {
   
   render() {
     const {playlist} = this.props;
-    const {
-      title, author, episodeDescription, likes,
-    } = playlist[0];
+    const {title, episodeDescription, likes} = playlist[0];
     
     return (
       <div className="Playing">
@@ -74,32 +73,34 @@ class Playing extends Component {
               {title}{" "}
               </span>
             {h2p(episodeDescription)} {" "}
-            <span>
-              {" "}{author !== title && author}
-            </span>
+          </p>
+          <p>
             <span style={{fontWeight: 'bold'}}>
             {" "}Likes: {this.state.liked ? (likes + 1) : likes}
           </span>
           </p>
         </div>
         
-        <h3>
-          <span className="Playing-previous" role="link" onClick={this.handlePrevious}>
-            <FaLongArrowLeft/>
-          </span>
-          <span>{" "}</span>
-          <span className="Playing-like" role="link" onClick={this.handleLike}>
+        <div className="Playing-nav">
+          <h2 className="Playing-previous" role="link" onClick={this.handlePrevious}>
+            <FaArrowLeft/>
+          </h2>
+          <h2 className="Playing-like" role="link" onClick={this.handleLike}>
             <MdThumbUp />
-          </span>
-          <span>{" "}</span>
-          <span><FaFacebookOfficial /></span>
-          <span>{" "}</span>
-          <span><FaTwitter/></span>
-          <span>{" "}</span>
-          <span className="Playing-next" role="link" onClick={this.handleNext}>
-            <FaLongArrowRight/>
-          </span>
-        </h3>
+          </h2>
+          
+          <h2 className="Playing-social">
+            <span className="Playing-facebook"><FaFacebookOfficial /></span>
+            <span>{" "}</span>
+            <span className="Playing-twitter"><FaTwitter/></span>
+            <span>{" "}</span>
+            <span className="Playing-twitter"><FaPinterestSquare/></span>
+          </h2>
+          
+          <h2 className="Playing-next" role="link" onClick={this.handleNext}>
+            <FaArrowRight/>
+          </h2>
+        </div>
       </div>
     );
   }
