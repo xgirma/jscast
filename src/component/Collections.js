@@ -61,12 +61,12 @@ class Collections extends Component {
                      onClick={this.handleList}>List
                 </span>
               </li>
-              <li className="Collections-switches-li">
-                <span className="Collections-preview-btn"
-                     role="link"
-                     onClick={this.handlePreview}>Preview
-                </span>
-              </li>
+              {/*<li className="Collections-switches-li">*/}
+                {/*<span className="Collections-preview-btn"*/}
+                     {/*role="link"*/}
+                     {/*onClick={this.handlePreview}>Preview*/}
+                {/*</span>*/}
+              {/*</li>*/}
               <li className="Collections-switches-li">
                 <span className="Collections-thumb-btn"
                      role="link"
