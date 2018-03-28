@@ -7,7 +7,7 @@ import {typeCollection} from '../utils/type';
 import Thumb from './Thumb';
 import '../style/Collection.css';
 
-class Collection extends Component {
+class CollectionList extends Component {
   static propTypes = {
     collection: typeCollection,
   };
@@ -16,7 +16,7 @@ class Collection extends Component {
     collection: defCollection,
   };
   
-  displayName = 'Collection';
+  displayName = 'CollectionList';
   
   state = {
     expand: false,
@@ -41,7 +41,7 @@ class Collection extends Component {
               exact
               collection={collection}
             >
-              <Thumb image={image}/>
+              <Thumb image={image} width="200" height="200"/>
             </NavLink>
           </HashRouter>
         </div>
@@ -82,4 +82,4 @@ class Collection extends Component {
   }
 }
 
-export default Collection;
+export default CollectionList;

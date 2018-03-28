@@ -47,7 +47,7 @@ class Footer extends Component {
               to={url}
               exact
             >
-              <Thumb image={image}/>
+              <Thumb image={image} width="200" height="200"/>
             </NavLink>
           </HashRouter>
         </div>

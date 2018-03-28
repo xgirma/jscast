@@ -22,6 +22,10 @@
     grid-area: opener;
 }
 
+.Collection-opener:hover {
+    color: red;
+}
+
 .Collection-title {
     grid-area: libtitle;
 }

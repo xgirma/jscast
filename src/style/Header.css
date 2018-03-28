@@ -8,15 +8,11 @@
 
 .Header-home {
     grid-area: home;
-    /*background-color: green;*/
 }
 
 .Header-library {
     grid-area: library;
-    /*background-color: yellow;*/
-
 }
 .Header-about {
     grid-area: about;
-    /*background-color: red;*/
 }

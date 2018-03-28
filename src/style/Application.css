@@ -1,6 +1,5 @@
 .App {
     display: grid;
-    /*grid-template-columns: repeat(3, 1fr);*/
     grid-template-columns: 20% 1fr 20%;
     grid-template-rows: 20px 1fr 100px;
     grid-template-areas: ". head ." ". body ." ". footer .";
@@ -10,17 +9,13 @@
 .App-header {
     grid-area: head;
     border-collapse: separate;
-    /*border-bottom: 5px solid black;*/
-    /*background-color: green;*/
 }
 
 .App-body {
     grid-area: body;
-    /*background-color: yellow;*/
 }
 
 .App-footer {
     grid-area: footer;
-    /*background-color: red;*/
 }
 

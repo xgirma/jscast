@@ -25,12 +25,12 @@ class Thumb extends Component {
   };
   
   render() {
-    const {image } = this.props;
+    const {image, height, width } = this.props;
     return (
       <div className="container-Thumb" id="myImg">
         {this.state.errored
-          ? <img onError={this.handleError} src={require('./noLogo.png')} alt="Logo Not Found" width="200" height="200"/>
-        :<img onError={this.handleError} src={image} alt={image} width="200" height="200"/>}
+          ? <img onError={this.handleError} src={require('./noLogo.png')} alt="Logo Not Found" width={width} height={height}/>
+        :<img onError={this.handleError} src={image} alt={image} width={width} height={height}/>}
       </div>
     )
   }

@@ -2,6 +2,8 @@ import api from '../utils/api';
 
 export const SELECT_POD = 'SELECT_POD';
 export const NEXT_POD = 'NEXT_POD';
+export const NEXT_CHANNEL = 'NEXT_CHANNEL';
+export const PREVIOUS_CHANNEL = 'PREVIOUS_CHANNEL';
 export const PREVIOUS_POD = 'PREVIOUS_POD';
 export const FETCH_PODS_FAILURE = 'FETCH_PODS_FAILURE';
 export const FETCH_PODS_SUCCESS = 'FETCH_PODS_SUCCESS';
@@ -23,6 +25,14 @@ export const nextPod = () => ({
 
 export const previousPod = () => ({
   type: PREVIOUS_POD,
+});
+
+export const nextChannel = () => ({
+  type: NEXT_CHANNEL,
+});
+
+export const previousChannel = () => ({
+  type: PREVIOUS_CHANNEL,
 });
 
 export const likePod = id => (dispatch) => {

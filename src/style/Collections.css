@@ -1,14 +1,24 @@
 .Collections {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 16px auto;
+    grid-template-rows: 40px 40px auto;
     grid-template-areas:
             "cbar"
+            "switches"
             "clist";
     padding-bottom: 10px;
 }
 
-.Collections-list {
+.Collections-switches {
+    grid-area: switches;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 20px;
+    justify-content: center;
+    grid-row-gap: 0em;
+}
+
+.Collections-view {
     grid-area: clist;
 }
 
@@ -16,5 +26,51 @@
     grid-area: cbar;
     height: 16px;
     width: 100%;
-    background-color: #C0C0C0;
+    background-color: black;
+}
+
+.Collections-list-btn {
+    grid-area: listBtn;
+    font-weight: bold;
+}
+
+.Collections-list-btn:hover {
+    color: red;
+}
+
+.Collections-preview-btn {
+    grid-area: previewBtn;
+    font-weight: bold;
+}
+
+.Collections-preview-btn:hover {
+    color: red;
+}
+
+.Collections-thumb-btn {
+    grid-area: thumbBtn;
+    font-weight: bold;
+}
+
+.Collections-thumb-btn:hover {
+    color: red;
+}
+
+.Collections-thumb-view {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Collections-switches-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Collections-switches-li {
+    /*display: inline;*/
+    float: left;
+    display: block;
+    padding: 8px;
 }
