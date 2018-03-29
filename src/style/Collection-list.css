@@ -32,13 +32,12 @@
 
 .Collection-list-detail {
     grid-area: libdetail;
-    margin: 0em;
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 200px 5% 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-            "detailImage detailText";
-    grid-column-gap: 10px;
+            "detailImage . detailText";
+    grid-column-gap: 15px;
 }
 
 .Collection-list-detail-image {

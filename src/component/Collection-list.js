@@ -5,7 +5,7 @@ import FaFolderOpen from 'react-icons/lib/fa/folder-open';
 import {defCollection} from '../utils/default';
 import {typeCollection} from '../utils/type';
 import Thumb from './Thumb';
-import '../style/Collection.css';
+import '../style/Collection-list.css';
 
 class CollectionList extends Component {
   static propTypes = {
@@ -33,8 +33,8 @@ class CollectionList extends Component {
     } = collection;
     const url = `/library/channel/${title}`;
     const detail = (
-      <div className="Collection-detail">
-        <div className="detail-image">
+      <div className="Collection-list-detail">
+        <div className="Collection-list-detail-image">
           <HashRouter>
             <NavLink
               to={url}
@@ -45,7 +45,7 @@ class CollectionList extends Component {
             </NavLink>
           </HashRouter>
         </div>
-        <div className="detail-text">
+        <div className="Collection-list-detail-text">
           <p style={{fontWeight: 'bold'}}>{author || null}</p>
           <p>{description || null}</p>
           <p>{link || null}</p>
@@ -55,14 +55,14 @@ class CollectionList extends Component {
     );
     
     return (
-      <div className="Collection">
-        <div className="Collection-top">
-          <div className="Collection-opener"
+      <div className="Collection-list">
+        <div className="Collection-list-top">
+          <div className="Collection-list-opener"
                role="link"
                onClick={this.handleClick}>
             {this.state.expand ? <FaFolderOpen/> : <FaFolder/>}
           </div>
-          <div className="Collection-title">
+          <div className="Collection-list-title">
             <HashRouter>
               <NavLink
                 to={url}
