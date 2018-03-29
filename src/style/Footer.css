@@ -1,10 +1,10 @@
 .Footer {
     display: grid;
     background-color: #F0F0F0;
-    grid-template-columns: 1fr 200px;
+    grid-template-columns: 1fr 200px 5px;
     grid-template-rows: auto;
     grid-template-areas:
-            "footerDetail footerImage";
+            "footerDetail footerImage .";
     grid-column-gap: 10px;
     border-bottom: 5px solid black;
 }
@@ -17,7 +17,7 @@
     grid-area: footerDetail;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 50px;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas:
             "footerTitle"
             "footerChannel";
@@ -31,6 +31,6 @@
 
 .Footer-channel {
     grid-area: footerChannel;
-    font-size: medium;
+    text-align: right;
 }
 

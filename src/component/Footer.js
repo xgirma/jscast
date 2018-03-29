@@ -36,7 +36,7 @@ class Footer extends Component {
                 to={url}
                 exact
               >
-                <p>{title.toUpperCase()} {" : "}{author !== title && author}</p>
+                <p>{title.toUpperCase()}</p>
               </NavLink>
             </HashRouter>
             </div>
