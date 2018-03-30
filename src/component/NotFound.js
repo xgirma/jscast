@@ -11,7 +11,11 @@ class NotFound extends Component {
   render() {
     return (
       <div className="NotFound">
-        {'not found'}
+        <div className="NotFound-bar">
+          {''}
+        </div>
+        <h1> Page Not Found</h1>
+        {'Some beautiful paths can not be discovered without getting lost. Erol Ozan'}
       </div>
     );
   }

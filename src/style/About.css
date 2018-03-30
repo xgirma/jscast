@@ -1,3 +1,9 @@
 .About {
 
 }
+
+.About-bar {
+    height: 16px;
+    width: 100%;
+    background-color: black;
+}

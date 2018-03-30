@@ -1,3 +1,9 @@
 .NotFound {
 
 }
+
+.NotFound-bar {
+    height: 16px;
+    width: 100%;
+    background-color: black;
+}
