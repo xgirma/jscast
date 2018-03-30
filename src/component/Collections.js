@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import MdViewList from 'react-icons/lib/md/view-list';
+import MdViewWeek from 'react-icons/lib/md/view-week';
+import MdViewModule from 'react-icons/lib/md/view-module';
 import CollectionList from './Collection-list';
 import CollectionThumb from './Collection-thumb';
 import CollectionPreview from './Collection-preview';
@@ -34,13 +37,13 @@ class Collections extends Component {
   };
   
   handlePrevious = () => {
-    const {playlist, previousPod} = this.props;
-    previousPod(playlist[9]._id);
+    const {previousChannel} = this.props;
+    previousChannel();
   };
   
   handleNext = () => {
-    const {playlist, nextPod} = this.props;
-    nextPod(playlist[1]._id);
+    const {nextChannel} = this.props;
+    nextChannel();
   };
   
   render() {
@@ -58,19 +61,19 @@ class Collections extends Component {
               <li className="Collections-switches-li">
                 <span className="Collections-list-btn"
                      role="link"
-                     onClick={this.handleList}>List
+                     onClick={this.handleList}><MdViewList/>
                 </span>
               </li>
-              {/*<li className="Collections-switches-li">*/}
-                {/*<span className="Collections-preview-btn"*/}
-                     {/*role="link"*/}
-                     {/*onClick={this.handlePreview}>Preview*/}
-                {/*</span>*/}
-              {/*</li>*/}
+              <li className="Collections-switches-li">
+                <span className="Collections-preview-btn"
+                     role="link"
+                     onClick={this.handlePreview}><MdViewWeek/>
+                </span>
+              </li>
               <li className="Collections-switches-li">
                 <span className="Collections-thumb-btn"
                      role="link"
-                     onClick={this.handleThumb}>Tiles
+                     onClick={this.handleThumb}><MdViewModule/>
                 </span>
               </li>
             </ul>
@@ -85,8 +88,8 @@ class Collections extends Component {
             <div className="Collections-preview-view">
               {view === 'preview' && <CollectionPreview
                 collections={collections}
-                leftThumb={this.handlePrevious}
-                rightThumb={this.handleNext}
+                handlePrevious={this.handlePrevious}
+                handleNext={this.handleNext}
               />}
             </div>
             <div className="Collections-thumb-view">

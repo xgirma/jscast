@@ -16,6 +16,7 @@
     grid-template-rows: 20px;
     justify-content: center;
     grid-row-gap: 0em;
+    font-size: large;
 }
 
 .Collections-view {

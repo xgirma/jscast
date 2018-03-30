@@ -14,23 +14,16 @@ class Thumb extends Component {
   
   displayName = 'Thumb';
   
-  state = {
-    errored: false,
-  };
-  
-  handleError = () => {
-    this.setState({
-      errored: true
-    });
-  };
-  
   render() {
     const {image, height, width } = this.props;
     return (
       <div className="container-Thumb" id="myImg">
-        {this.state.errored
-          ? <img onError={this.handleError} src={require('./noLogo.png')} alt="Logo Not Found" width={width} height={height}/>
-        :<img onError={this.handleError} src={image} alt={image} width={width} height={height}/>}
+        <img
+          src={image}
+          onError={(e)=>{e.target.src=require('./noLogo.png')}}
+          width={width}
+          height={height}
+        />
       </div>
     )
   }
