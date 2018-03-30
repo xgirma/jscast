@@ -8,11 +8,11 @@ import '../style/Home.css';
 
 const Home = () => (
   <div className="Home">
-    <Player className="Home-player"/>
-    <Playing className="Home-playing"/>
-    <Toggle className="Home-toggle"/>
-    <Playlist className="Home-playlist"/>
-    <Footer className="Home-footer"/>
+    <Player className="Home-player" />
+    <Playing className="Home-playing" />
+    <Toggle className="Home-toggle" />
+    <Playlist className="Home-playlist" />
+    <Footer className="Home-footer" />
   </div>
 );
 

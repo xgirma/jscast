@@ -1,6 +1,7 @@
 .Pod:hover {
     color:red;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .Pod:nth-child(odd) {

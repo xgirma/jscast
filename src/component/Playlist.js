@@ -9,7 +9,7 @@ const Playlist = ({ playlist, onPodClick, recent }) => (
   <div className="Playlist">
     {
       playlist.map(pod => (
-        <Pod key={pod._id} pod={pod} onPodClick={onPodClick} recent={recent}/>
+        <Pod key={pod._id} pod={pod} onPodClick={onPodClick} recent={recent} />
       ))
     }
   </div>

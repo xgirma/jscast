@@ -1,7 +1,7 @@
 .Collections {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 40px 40px auto;
+    grid-template-rows: 30px 45px auto;
     grid-template-areas:
             "cbar"
             "switches"
@@ -17,6 +17,10 @@
     justify-content: center;
     grid-row-gap: 0em;
     font-size: large;
+}
+
+.Collections-switches:hover {
+    cursor: pointer;
 }
 
 .Collections-view {

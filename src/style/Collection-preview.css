@@ -25,13 +25,23 @@
     grid-area: previewPrevious;
     align-self: center;
 }
+
+.Collection-preview-previous:hover {
+    cursor: pointer;
+}
+
 .Collection-preview-current {
     grid-area: previewCurrent;
     align-self: center;
 }
+
 .Collection-preview-next {
     grid-area: previewNext;
     align-self: center;
+}
+
+.Collection-preview-next:hover {
+    cursor: pointer;
 }
 
 .Collection-preview-detail {

@@ -35,3 +35,7 @@
             "previous liked social next";
     grid-column-gap: 10px;
 }
+
+.Playing-nav:hover {
+    cursor: pointer;
+}

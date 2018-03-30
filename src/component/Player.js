@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactPlayer from 'react-player';
 import moment from 'moment';
-import Duration from '../utils/Duration';
 import FaPause from 'react-icons/lib/fa/pause';
 import FaPlay from 'react-icons/lib/fa/play';
-import PropTypes from 'prop-types';
-import {defPlaylist} from '../utils/default';
-import {typePlaylist} from '../utils/type';
+import Duration from '../utils/Duration';
+import { defPlaylist } from '../utils/default';
+import { typePlaylist } from '../utils/type';
 import '../style/Player.css';
 
 class Player extends Component {
@@ -16,25 +16,21 @@ class Player extends Component {
     previousPod: PropTypes.func,
     auto: PropTypes.bool,
   };
+
   static defaultProps = {
     playlist: defPlaylist,
     nextPod: () => {},
     previousPod: () => {},
     auto: false,
   };
-  
+
   displayName = 'Player';
-  
-  handleNext = () => {
-    const {nextPod} = this.props;
-    nextPod();
-  };
-  
+
   handlePrevious = () => {
-    const {previousPod} = this.props;
+    const { previousPod } = this.props;
     previousPod();
   };
-  
+
   state = {
     url: '',
     playing: false,
@@ -46,75 +42,80 @@ class Player extends Component {
     playbackRate: 1.0,
     loop: false,
   };
-  
+
   componentDidMount() {
-    const {playlist, auto} = this.props;
-    const {url} = playlist[0];
+    const { playlist, auto } = this.props;
+    const { url } = playlist[0];
     this.setState({
       url,
       playing: auto,
     });
   }
-  
+
   playPause = () => {
     this.setState({
-      playing: !this.state.playing
+      playing: !this.state.playing,
     });
   };
-  
+
   onPlay = () => {
     this.setState({ playing: true });
   };
-  
+
   onPause = () => {
     this.setState({ playing: false });
   };
-  
+
   onSeekMouseDown = () => {
-    this.setState({seeking: true});
+    this.setState({ seeking: true });
   };
-  
+
   onSeekChange = (e) => {
     this.setState({
-      played: parseFloat(e.target.value)
+      played: parseFloat(e.target.value),
     });
   };
-  
+
   onSeekMouseUp = (e) => {
     this.setState({ seeking: false });
     this.player.seekTo(parseFloat(e.target.value));
   };
-  
+
   onProgress = (state) => {
     if (!this.state.seeking) {
       this.setState(state);
     }
   };
-  
+
   onEnded = () => {
     this.setState({
-      playing: this.state.loop
+      playing: this.state.loop,
     });
   };
-  
+
   onDuration = (duration) => {
     this.setState({ duration });
   };
-  
+
+  handleNext = () => {
+    const { nextPod } = this.props;
+    nextPod();
+  };
+
   ref = (player) => {
     this.player = player;
   };
-  
+
   render() {
     const {
       playing, volume, muted, loop, played, duration, playbackRate,
     } = this.state;
-    
+
     const { playlist } = this.props;
     const { url } = playlist[0];
     const { episodeTitle, published } = playlist[0];
     const date = moment(published).format('MMM DD YY');
-    
+
     return (
       <div className="Player">
         <ReactPlayer
@@ -134,7 +135,7 @@ class Player extends Component {
           onProgress={this.onProgress}
           onDuration={this.onDuration}
         />
-        <progress max={1} value={played} className="Player-bar"/>
+        <progress max={1} value={played} className="Player-bar" />
         <input
           type="range"
           className="Player-seek"
@@ -147,26 +148,26 @@ class Player extends Component {
           onMouseUp={this.onSeekMouseUp}
         />
         <div className="Player-title">
-          Now Playing: {episodeTitle} - <span style={{fontWeight:'bold'}}>{date}</span>
+          Now Playing: {episodeTitle} - <span style={{ fontWeight: 'bold' }}>{date}</span>
         </div>
         <h4 className="Player-controls">
           <div
             role="button"
             onClick={this.playPause}
-            className="Player-play">
+            className="Player-play"
+          >
             {playing
-              ? <FaPause/>
-              : <FaPlay/>
+              ? <FaPause />
+              : <FaPlay />
             }
           </div>
-          <div className="Player-duration" style={{alignContent:'end'}}>
-            <Duration seconds={duration * played}/>
-            <span>{" - "}</span>
-            <Duration seconds={duration * (1 - played)}/>
+          <div className="Player-duration" style={{ alignContent: 'end' }}>
+            <Duration seconds={duration * played} />
+            <span> - </span>
+            <Duration seconds={duration * (1 - played)} />
           </div>
         </h4>
-        <div className="Player-published">
-        </div>
+        <div className="Player-published" />
       </div>
     );
   }

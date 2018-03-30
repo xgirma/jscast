@@ -22,16 +22,16 @@ export default function (state = {}, action) {
       playlist: [...(playlist.slice(index)), ...(playlist.slice(0, index))],
     };
   }
-  
-  if(action.type === NEXT_CHANNEL) {
+
+  if (action.type === NEXT_CHANNEL) {
     const { collections } = state;
-  
+
     if (collections.length <= 1) {
       return { ...state, autoPlay: false };
     }
-  
+
     const index = 1;
-  
+
     return {
       ...state,
       autoPlay: false,
@@ -54,23 +54,23 @@ export default function (state = {}, action) {
       playlist: [...(playlist.slice(index)), ...(playlist.slice(0, index))],
     };
   }
-  
+
   if (action.type === PREVIOUS_CHANNEL) {
     const { collections } = state;
-    
+
     if (collections.length <= 1) {
       return { ...state, autoPlay: false, collections };
     }
-    
+
     const index = collections.length - 1;
-    
+
     return {
       ...state,
       autoPlay: false,
       collections: [...(collections.slice(index)), ...(collections.slice(0, index))],
     };
   }
-  
+
   if (action.type === SELECT_POD) {
     const { playlist } = state;
     const index = playlist.findIndex(pod => pod._id === action.id);

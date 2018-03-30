@@ -12,7 +12,7 @@ const Channel = () => (
     <Playing />
     <Toggle />
     <Playlist />
-    <Footer/>
+    <Footer />
   </div>
 );
 
