@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player';
 import moment from 'moment';
 import FaPause from 'react-icons/lib/fa/pause';
 import FaPlay from 'react-icons/lib/fa/play';
-import Duration from '../utils/Duration';
+import Duration from '../utils/duration';
 import { defPlaylist } from '../utils/default';
 import { typePlaylist } from '../utils/type';
 import '../style/Player.css';

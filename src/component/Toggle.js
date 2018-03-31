@@ -1,42 +1,45 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import store from '../store';
 import { TEN_RECENT, TEN_POPULAR } from '../utils/path';
-import { getPods, getPodsByChannel } from '../actions';
 import '../style/Toggle.css';
 
 class Toggle extends Component {
   static propTypes = {
     recent: PropTypes.bool,
     library: PropTypes.bool,
+    channel: PropTypes.bool,
     getPods: PropTypes.func,
+    getPodsByChannel: PropTypes.func,
   };
 
   static defaultProps = {
     recent: true,
     library: false,
-    getPods: () => {
-    },
+    channel: false,
+    getPods: () => {},
+    getPodsByChannel: () => {},
   };
 
   displayName = 'Toggle';
 
   handleHomeRecent = () => {
-    store.dispatch(getPods(TEN_RECENT, true, false));
+    const { getPods } = this.props;
+    getPods(TEN_RECENT, true, false);
   };
 
   handleHomePopular = () => {
-    store.dispatch(getPods(TEN_POPULAR, false, false));
+    const { getPods } = this.props;
+    getPods(TEN_POPULAR, false, false);
   };
 
   handleChannelRecent = () => {
-    const { channel } = this.props;
-    store.dispatch(getPodsByChannel(TEN_RECENT, channel, true, true));
+    const { channel, getPodsByChannel } = this.props;
+    getPodsByChannel(TEN_RECENT, channel, true, true);
   };
 
   handleChannelPopular = () => {
-    const { channel } = this.props;
-    store.dispatch(getPodsByChannel(TEN_POPULAR, channel, false, true));
+    const { channel, getPodsByChannel } = this.props;
+    getPodsByChannel(TEN_POPULAR, channel, false, true);
   };
 
   render() {

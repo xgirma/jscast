@@ -7,6 +7,7 @@ const Header = () => (
     <div className="Header">
       <NavLink
         to="/"
+        replace
         exact
         className="Header-home"
       >Home
@@ -14,6 +15,7 @@ const Header = () => (
 
       <NavLink
         to="/library"
+        replace
         exact
         className="Header-library"
       >Library
@@ -21,6 +23,7 @@ const Header = () => (
 
       <NavLink
         to="/about"
+        replace
         exact
         className="Header-about"
       >About
