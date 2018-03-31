@@ -1,11 +1,5 @@
 .Collection-thumb {}
 
-.Collection-thumb-single {
-    /*border: 1px solid white;*/
-    /*border-radius: 4px;*/
-    /*padding: 5px;*/
-}
+.Collection-thumb-single {}
 
-.Collection-thumb-single:hover {
-    /*box-shadow: 0 0 2px 1px red;*/
-}
+.Collection-thumb-single:hover {}

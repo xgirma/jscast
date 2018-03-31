@@ -15,7 +15,7 @@ class ChannelContainer extends Component {
     }).isRequired,
   };
 
-  displayName = 'Channel-container';
+  displayName = 'ChannelContainer';
 
   constructor(props) {
     super(props);

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { HashRouter, NavLink } from 'react-router-dom';
 import moment from 'moment';
 import Thumb from './Thumb';
-import '../style/Footer.css';
 import { typePlaylist } from '../utils/type';
 import { defPlaylist } from '../utils/default';
+import '../style/Footer.css';
 
 class Footer extends Component {
   static propTypes = {

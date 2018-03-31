@@ -25,6 +25,5 @@ export default function Duration({ seconds }) {
 }
 
 Duration.propTypes = {
-  // className: PropTypes.string.isRequired,
   seconds: PropTypes.number.isRequired,
 };

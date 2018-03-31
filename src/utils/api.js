@@ -48,12 +48,15 @@ export default {
   getPods(path) {
     return pods(path);
   },
+
   getChannelsInfo() {
     return channels();
   },
+
   getPodsFromChannel(path, channel) {
     return podsFromChannel(path, channel);
   },
+
   likePod(id) {
     return like(id);
   },
