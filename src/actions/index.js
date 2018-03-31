@@ -1,4 +1,4 @@
-import api from '../utils/api';
+import { pods, channels, podsFromChannel, like } from '../utils/api';
 
 export const SELECT_POD = 'SELECT_POD';
 export const NEXT_POD = 'NEXT_POD';
@@ -36,7 +36,7 @@ export const previousChannel = () => ({
 });
 
 export const likePod = id => (dispatch) => {
-  api.likePod(id).then((data) => {
+  like(id).then((data) => {
     const modified = data.nModified === 1;
     dispatch({
       type: POST_LIKE_PODS_SUCCESS,
@@ -52,7 +52,7 @@ export const likePod = id => (dispatch) => {
 };
 
 export const getPods = (path, recent = true, library = false) => (dispatch) => {
-  api.getPods(path).then((playlist) => {
+  pods(path).then((playlist) => {
     dispatch({
       type: FETCH_PODS_SUCCESS,
       playlist: playlist.data,
@@ -69,7 +69,7 @@ export const getPods = (path, recent = true, library = false) => (dispatch) => {
 };
 
 export const getChannels = () => (dispatch) => {
-  api.getChannelsInfo().then((collections) => {
+  channels().then((collections) => {
     dispatch({
       type: FETCH_COLLECTION_SUCCESS,
       collections: collections.data,
@@ -84,7 +84,7 @@ export const getChannels = () => (dispatch) => {
 };
 
 export const getPodsByChannel = (path, channel, recent = true, library = true) => (dispatch) => {
-  api.getPodsFromChannel(path, channel).then((playlist) => {
+  podsFromChannel(path, channel).then((playlist) => {
     dispatch({
       type: FETCH_CHANNEL_POD_SUCCESS,
       playlist: playlist.data,
