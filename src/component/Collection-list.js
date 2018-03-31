@@ -41,7 +41,7 @@ class CollectionList extends Component {
               exact
               collection={collection}
             >
-              <Thumb image={image} width="200" height="200" />
+              <Thumb image={image} width={200} height={200} />
             </NavLink>
           </HashRouter>
         </div>

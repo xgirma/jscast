@@ -52,7 +52,7 @@ class CollectionPreview extends Component {
             role="link"
             onClick={handlePrevious}
           >
-            <Thumb image={previousPod.image} width="150" height="150" />
+            <Thumb image={previousPod.image} width={70} height={70} />
           </div>
 
           <div className="Collection-preview-current">
@@ -61,7 +61,7 @@ class CollectionPreview extends Component {
                 to={url}
                 exact
               >
-                <Thumb image={image} width="350" height="350" />
+                <Thumb image={image} width={350} height={350} />
               </NavLink>
             </HashRouter>
           </div>
@@ -71,7 +71,7 @@ class CollectionPreview extends Component {
             role="link"
             onClick={handleNext}
           >
-            <Thumb image={nextPod.image} width="150" height="150" />
+            <Thumb image={nextPod.image} width={70} height={70} />
           </div>
         </div>
 

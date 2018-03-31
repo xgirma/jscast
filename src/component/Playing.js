@@ -18,13 +18,16 @@ class Playing extends Component {
     playlist: typePlaylist,
     recent: PropTypes.bool,
     likePod: PropTypes.func,
+    previousPod: PropTypes.func,
+    nextPod: PropTypes.func,
   };
 
   static defaultProps = {
     playlist: defPod,
     recent: true,
-    likePod: () => {
-    },
+    likePod: () => {},
+    previousPod: () => {},
+    nextPod: () => {},
   };
 
   displayName = 'Playing';
@@ -82,11 +85,11 @@ class Playing extends Component {
         </div>
 
         <div className="Playing-nav">
-          <h2 className="Playing-previous" role="link" onClick={this.handlePrevious}>
-            <FaArrowLeft />
+          <h2>
+            <FaArrowLeft className="Playing-previous" role="link" onClick={this.handlePrevious} />
           </h2>
-          <h2 className="Playing-like" role="link" onClick={this.handleLike}>
-            <MdThumbUp />
+          <h2>
+            <MdThumbUp className="Playing-like" role="link" onClick={this.handleLike} />
           </h2>
 
           <h2 className="Playing-social">
@@ -97,8 +100,8 @@ class Playing extends Component {
             <span className="Playing-twitter"><FaPinterestSquare /></span>
           </h2>
 
-          <h2 className="Playing-next" role="link" onClick={this.handleNext}>
-            <FaArrowRight />
+          <h2>
+            <FaArrowRight className="Playing-next" role="link" onClick={this.handleNext} />
           </h2>
         </div>
       </div>

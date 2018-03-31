@@ -18,11 +18,13 @@ const Playlist = ({ playlist, onPodClick, recent }) => (
 Playlist.propTypes = {
   playlist: typePlaylist,
   onPodClick: PropTypes.func,
+  recent: PropTypes.bool,
 };
 
 Playlist.defaultProps = {
   playlist: defPlaylist,
   onPodClick: () => {},
+  recent: true,
 };
 
 Playlist.displayName = 'Playlist';

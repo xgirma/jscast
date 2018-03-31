@@ -9,11 +9,13 @@ class Pod extends Component {
   static propTypes = {
     pod: typePod,
     onPodClick: PropTypes.func,
+    recent: PropTypes.bool,
   };
 
   static defaultProps = {
     pod: defPod,
     onPodClick: () => {},
+    recent: true,
   };
 
   displayName = 'Pod';

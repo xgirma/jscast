@@ -13,7 +13,7 @@
     grid-area: previewNav;
     display: grid;
     justify-content: center;
-    grid-template-columns: 10% 20% 40% 20% 10%;
+    grid-template-columns: 1fr 150px 350px 150px 1fr;
     grid-template-rows: auto;
     grid-template-areas:
             ". previewPrevious previewCurrent previewNext .";

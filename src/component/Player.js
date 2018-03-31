@@ -14,48 +14,24 @@ class Player extends Component {
     playlist: typePlaylist,
     nextPod: PropTypes.func,
     previousPod: PropTypes.func,
-    auto: PropTypes.bool,
   };
 
   static defaultProps = {
     playlist: defPlaylist,
     nextPod: () => {},
     previousPod: () => {},
-    auto: false,
   };
 
   displayName = 'Player';
 
-  handlePrevious = () => {
-    const { previousPod } = this.props;
-    previousPod();
-  };
-
   state = {
-    url: '',
     playing: false,
     volume: 0.8,
     muted: false,
     played: 0,
-    loaded: 0,
     duration: 0,
     playbackRate: 1.0,
     loop: false,
-  };
-
-  componentDidMount() {
-    const { playlist, auto } = this.props;
-    const { url } = playlist[0];
-    this.setState({
-      url,
-      playing: auto,
-    });
-  }
-
-  playPause = () => {
-    this.setState({
-      playing: !this.state.playing,
-    });
   };
 
   onPlay = () => {
@@ -97,9 +73,20 @@ class Player extends Component {
     this.setState({ duration });
   };
 
+  playPause = () => {
+    this.setState({
+      playing: !this.state.playing,
+    });
+  };
+
   handleNext = () => {
     const { nextPod } = this.props;
     nextPod();
+  };
+
+  handlePrevious = () => {
+    const { previousPod } = this.props;
+    previousPod();
   };
 
   ref = (player) => {

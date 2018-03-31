@@ -16,10 +16,6 @@ class CollectionThumb extends Component {
 
   displayName = 'CollectionThumb';
 
-  state = {
-    expand: false,
-  };
-
   handleClick = () => {
     this.setState(prevState => ({ expand: !prevState.expand }));
   };
@@ -37,7 +33,7 @@ class CollectionThumb extends Component {
               exact
               collection={collection}
             >
-              <Thumb image={image} width="200" height="200" />
+              <Thumb image={image} width={200} height={200} />
             </NavLink>
           </HashRouter>
         </div>
