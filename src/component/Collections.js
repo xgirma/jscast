@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import MdViewList from 'react-icons/lib/md/view-list';
 import MdViewWeek from 'react-icons/lib/md/view-week';
 import MdViewModule from 'react-icons/lib/md/view-module';
+import FooterSmall from './Footer-small';
 import CollectionList from './Collection-list';
 import CollectionThumb from './Collection-thumb';
 import CollectionPreview from './Collection-preview';
@@ -110,6 +111,7 @@ class Collections extends Component {
             </div>
           </div>
         </div>
+        <FooterSmall/>
       </div>
     );
   }
