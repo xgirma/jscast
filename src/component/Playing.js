@@ -3,9 +3,6 @@ import h2p from 'html2plaintext';
 import MdThumbUp from 'react-icons/lib/md/thumb-up';
 import FaArrowLeft from 'react-icons/lib/fa/arrow-left';
 import FaArrowRight from 'react-icons/lib/fa/arrow-right';
-import FaFacebookOfficial from 'react-icons/lib/fa/facebook-official';
-import FaPinterestSquare from 'react-icons/lib/fa/pinterest-square';
-import FaTwitter from 'react-icons/lib/fa/twitter';
 import PropTypes from 'prop-types';
 import { defPod } from '../utils/default';
 import { getPods } from '../actions';
@@ -93,11 +90,6 @@ class Playing extends Component {
           </h2>
 
           <h2 className="Playing-social">
-            <span className="Playing-facebook"><FaFacebookOfficial /></span>
-            <span />
-            <span className="Playing-twitter"><FaTwitter /></span>
-            <span />
-            <span className="Playing-twitter"><FaPinterestSquare /></span>
           </h2>
 
           <h2>

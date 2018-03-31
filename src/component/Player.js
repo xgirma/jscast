@@ -5,6 +5,7 @@ import moment from 'moment';
 import FaPause from 'react-icons/lib/fa/pause';
 import FaPlay from 'react-icons/lib/fa/play';
 import Duration from '../utils/duration';
+import Social from './Social';
 import { defPlaylist } from '../utils/default';
 import { typePlaylist } from '../utils/type';
 import '../style/Player.css';
@@ -153,8 +154,8 @@ class Player extends Component {
             <span> - </span>
             <Duration seconds={duration * (1 - played)} />
           </div>
+          <Social className="Player-social"/>
         </h4>
-        <div className="Player-published" />
       </div>
     );
   }

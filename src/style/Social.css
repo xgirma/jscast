@@ -1,0 +1,85 @@
+.Social {
+    grid-area: footerSocial;
+    display: grid;
+    grid-template-columns: 35px 35px 35px 35px 35px;
+    grid-template-rows: 1fr;
+    grid-template-areas: "facebook googlePlus twitter riddit tumblr";
+    justify-items: center;
+    align-self: right;
+}
+
+.Playing-facebook {
+    grid-area: facebook;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.Playing-facebook:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+.Playing-facebook:focus {outline:0;}
+
+.Playing-google-plus {
+    grid-area: googlePlus;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.Playing-google-plus:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+.Playing-google-plus:focus {outline:0;}
+
+.Playing-twitter {
+    grid-area: twitter;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.Playing-twitter:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+.Playing-twitter:focus {outline:0;}
+
+.Playing-pinterest {
+    grid-area: pinterest;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.Playing-reddit {
+    grid-area: riddit;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.Playing-reddit:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+.Playing-reddit:focus {outline:0;}
+
+.Playing-tumblr {
+    grid-area: tumblr;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.Playing-tumblr:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+.Playing-tumblr:focus {outline:0;}

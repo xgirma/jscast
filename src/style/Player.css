@@ -31,10 +31,11 @@
 .Player-controls {
     grid-area: pplay;
     display: grid;
-    grid-template-columns: 25px 100px;
-    grid-template-rows: 20px;
+    grid-template-columns: 25px 100px 1fr;
+    grid-template-rows: 40px;
     grid-template-areas:
-            "pplay pduration";
+            "pplay pduration playerSocial";
+    width: 100%;
 }
 
 .Player-play {
@@ -52,4 +53,9 @@
     display: flex;
     vertical-align: text-bottom;
     grid-area: pduration;
+}
+
+.Player-social {
+    grid-area: playerSocial;
+    text-align: right;
 }
