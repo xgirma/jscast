@@ -16,15 +16,15 @@ function format(seconds) {
   return `${mm}:${ss}`;
 }
 
-export default function Duration({ className, seconds }) {
+export default function Duration({ seconds }) {
   return (
-    <time dateTime={`P${Math.round(seconds)}S`} className={className}>
+    <time dateTime={`P${Math.round(seconds)}S`}>
       {format(seconds)}
     </time>
   );
 }
 
 Duration.propTypes = {
-  className: PropTypes.string.isRequired,
+  // className: PropTypes.string.isRequired,
   seconds: PropTypes.number.isRequired,
 };

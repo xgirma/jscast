@@ -7,7 +7,7 @@ class Toggle extends Component {
   static propTypes = {
     recent: PropTypes.bool,
     library: PropTypes.bool,
-    channel: PropTypes.bool,
+    channel: PropTypes.string,
     getPods: PropTypes.func,
     getPodsByChannel: PropTypes.func,
   };
@@ -15,7 +15,7 @@ class Toggle extends Component {
   static defaultProps = {
     recent: true,
     library: false,
-    channel: false,
+    channel: null,
     getPods: () => {},
     getPodsByChannel: () => {},
   };
