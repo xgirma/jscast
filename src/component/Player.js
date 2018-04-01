@@ -154,7 +154,7 @@ class Player extends Component {
             <span> - </span>
             <Duration seconds={duration * (1 - played)} />
           </div>
-          <Social className="Player-social"/>
+          <Social className="Player-social" />
         </h4>
       </div>
     );

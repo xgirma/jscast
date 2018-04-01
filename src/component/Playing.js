@@ -88,10 +88,6 @@ class Playing extends Component {
           <h2>
             <MdThumbUp className="Playing-like" role="link" onClick={this.handleLike} />
           </h2>
-
-          <h2 className="Playing-social">
-          </h2>
-
           <h2>
             <FaArrowRight className="Playing-next" role="link" onClick={this.handleNext} />
           </h2>

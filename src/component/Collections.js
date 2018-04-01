@@ -111,7 +111,7 @@ class Collections extends Component {
             </div>
           </div>
         </div>
-        <FooterSmall/>
+        <FooterSmall />
       </div>
     );
   }

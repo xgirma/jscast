@@ -12,28 +12,27 @@
 
 .Playing-previous {
     grid-area: previous;
-    text-align: left;
+    text-align: right;
 }
+
 .Playing-like {
     grid-area: liked;
     text-align: center;
 }
-.Playing-social {
-    grid-area: social;
-    text-align: center;
-}
+
 .Playing-next {
     grid-area: next;
-    text-align: right;
+    text-align: left;
 }
 
 .Playing-nav {
     display: grid;
-    grid-template-columns: 40px 1fr 40px;
+    grid-template-columns: 40px 40px 40px;
     grid-template-rows: auto;
     grid-template-areas:
             "previous liked next";
     grid-column-gap: 10px;
+    align-self: center;
 }
 
 .Playing-nav:hover {
