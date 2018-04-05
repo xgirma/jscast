@@ -9,16 +9,64 @@
     justify-content: center;
 }
 
-.Collection-preview-view-nav {
-    grid-area: previewNav;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 1fr 150px 350px 150px 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-            ". previewPrevious previewCurrent previewNext .";
-    padding-bottom: 10px;
-    justify-items: center;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .Collection-preview-view-nav {
+        grid-area: previewNav;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 1fr 50px 250px 50px 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+                ". previewPrevious previewCurrent previewNext .";
+        padding-bottom: 10px;
+        justify-items: center;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .Collection-preview-view-nav {
+        grid-area: previewNav;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 1fr 50px 250px 50px 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+                ". previewPrevious previewCurrent previewNext .";
+        padding-bottom: 10px;
+        justify-items: center;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .Collection-preview-view-nav {
+        grid-area: previewNav;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 1fr 50px 250px 50px 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+                ". previewPrevious previewCurrent previewNext .";
+        padding-bottom: 10px;
+        justify-items: center;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .Collection-preview-view-nav {
+        grid-area: previewNav;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 1fr 150px 350px 150px 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+                ". previewPrevious previewCurrent previewNext .";
+        padding-bottom: 10px;
+        justify-items: center;
+    }
 }
 
 .Collection-preview-previous {
