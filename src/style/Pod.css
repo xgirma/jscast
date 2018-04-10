@@ -1,5 +1,5 @@
 .Pod:hover {
-    color:red;
+    color:blue;
     font-weight: bold;
     cursor: pointer;
 }

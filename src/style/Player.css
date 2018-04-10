@@ -19,7 +19,7 @@
 }
 
 .Player-seek:hover {
-    color: red;
+    color: blue;
     cursor: pointer;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .Player-play:hover {
-    color: red;
+    color: blue;
     cursor: pointer;
 }
 

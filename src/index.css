@@ -20,7 +20,7 @@ a:link, a:visited {
 }
 
 a:hover {
-    color: red;
+    color: blue;
 }
 
 a:active {
@@ -110,5 +110,5 @@ img {
 img:hover {
     -webkit-filter: grayscale(1%); /* Safari 6.0 - 9.0 */
     filter: grayscale(1%);
-    box-shadow: 0 0 2px 1px red;
+    box-shadow: 0 0 2px 1px blue;
 }
