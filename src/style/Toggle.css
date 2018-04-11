@@ -4,8 +4,8 @@
 }
 
 .Toggle-inactive:hover {
-    color:blue;
     cursor: pointer;
+    background-color: blue;
 }
 
 .Toggle-active {
